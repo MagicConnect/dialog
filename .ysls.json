@@ -1,0 +1,100 @@
+{
+  "Commands": [
+    {
+      "YarnName": "change_background_image",
+      "DefinitionName": "change_background_image",
+      "Documentation": "Change the background image for the current cutscene.",
+      "Signature": "change_background_image NewBackgroundImage",
+      "Parameters": [
+        {
+          "Name": "NewBackgroundImage",
+          "Type": "String",
+          "Documentation": "You can specify any valid background image here.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "fade_in_character",
+      "DefinitionName": "fade_in_character",
+      "Documentation": "Fade in a character.",
+      "Signature": "fade_in_character CharacterName",
+      "Parameters": [
+        {
+          "Name": "CharacterName",
+          "Type": "String",
+          "Documentation": "You can specify any valid character image here.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "fade_out_character",
+      "DefinitionName": "fade_out_character",
+      "Documentation": "Fade out a character.",
+      "Signature": "fade_out_character CharacterName",
+      "Parameters": [
+        {
+          "Name": "CharacterName",
+          "Type": "String",
+          "Documentation": "You can specify any valid character image here.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "show_character",
+      "DefinitionName": "show_character",
+      "Documentation": "Show a character.",
+      "Signature": "show_character CharacterName",
+      "Parameters": [
+        {
+          "Name": "CharacterName",
+          "Type": "String",
+          "Documentation": "You can specify any valid character image here.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "hide_character",
+      "DefinitionName": "hide_character",
+      "Documentation": "Hide a character.",
+      "Signature": "hide_character CharacterName",
+      "Parameters": [
+        {
+          "Name": "CharacterName",
+          "Type": "String",
+          "Documentation": "You can specify any valid character image here.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "move_character",
+      "DefinitionName": "move_character",
+      "Documentation": "Move a character.",
+      "Signature": "move_character CharacterName Location",
+      "Parameters": [
+        {
+          "Name": "CharacterName",
+          "Type": "String",
+          "Documentation": "You can specify any valid character image here.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "Location",
+          "Type": "String",
+          "Documentation": "You can specify any location here (FarLeft, Left, Center, Right, FarRight).",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    }
+  ]
+}
