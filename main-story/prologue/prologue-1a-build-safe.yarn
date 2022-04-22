@@ -11,7 +11,7 @@ title: WakeUp
 ---
 <<change_background_image "Lana_Bedroom">>
 OOC: Please ignore that this doesn't look like Lana. Her pajamas are full-body.
-<<fade_in_character Beryl-Vegha>>
+<<show_character Beryl-Vegha>>
 //Fix that when pajama Lana is available
 Lana: *Gasp* *pant pant pant*
 Lana: What do I have to do to get a good night's rest?
@@ -21,14 +21,14 @@ Lana: Yeah, yeah, I know, birdies. I've got to hurry.
 //SFX: Birds
 Chirp chirp chirp!
 Lana: I wish you guys had woken me up instead of that dream...
-<<fade_out_character Beryl-Vegha>>
+<<hide_character Beryl-Vegha>>
 //SFX: Clothes rustling
 Rustle rustle
-<<fade_in_character Lana-Elenore>>
+<<show_character Lana-Elenore>>
 Lana: Alright, all dressed.
 Lana: Need my axe.
 Lana: Looking good as ever, Forester. Time to go.
-<<fade_out_character Lana-Elenore>>
+<<hide_character Lana-Elenore>>
 <<jump TournamentResuts>>
 ===
 title:TournamentResuts
@@ -41,32 +41,39 @@ Lana: Wow, look at all these people! Are they all here just for the ceremony?
 Bump!
 Lana: Oh, excuse me.
 <<move_character Neo-Elysion FarLeft>>
-<<fade_in_character Neo-Elysion>>
+<<show_character Neo-Elysion>>
+<<wait 1>>
 <<move_character Eden-Amsel Right>>
-<<fade_in_character Eden-Amsel>>
-<<fade_out_character Neo-Elysion>>
-<<move_character Ezra_Victoria Left>>
-<<fade_in_character Ezra_Victoria>>
-<<fade_out_character Eden-Amsel>>
+<<show_character Eden-Amsel>>
+<<wait 1>>
+<<hide_character Neo-Elysion>>
+<<wait 1>>
+<<move_character Krosei-Geyria Left>>
+<<show_character Krosei-Geyria>>
+<<wait 1>>
+<<hide_character Eden-Amsel>>
+<<wait 1>>
 <<move_character Ira-Lennox FarRight>>
-<<fade_in_character Ira-Lennox>>
-<<fade_out_character Ezra_Victoria>>
-<<fade_out_character Ira-Lennox>>
+<<show_character Ira-Lennox>>
+<<wait 1>>
+<<hide_character Krosei-Geyria>>
+<<wait 1>>
+<<hide_character Ira-Lennox>>
 //SFX: Fanfare
 //SFX: Crowd cheering
 (Crowd cheers)
-<<fade_out_character Lana-Elenore>>
-<<fade_in_character King>>
+<<hide_character Lana-Elenore>>
+<<show_character King-of-Sutheria>>
 King: The closing ceremony of the 51st annual Citizen Tournament will now commence!
 King: We've had many capable fighters this year from all over Sutheria. I have been proud to witness the most sportsmanlike Tournament in years!
 King: Such refined combat is something you would never see in the other kingdoms.
 King: This is, in no small part, due to the effort of our Knight of Knights, Valorie Solveig. Her continued dedication to chivalry and fair play have transformed the once-dark tournaments into something more befitting of our kingdom.
 
-<<move_character King Left>>
+<<move_character King-of-Sutheria Left>>
 <<show_character Valorie-Solveig>>
 <<move_character Valorie-Solveig Right>>
 (Crowd cheers)
-<<fade_out_character King>>
+<<hide_character King-of-Sutheria>>
 <<move_character Valorie-Solveig Center>>
 Valorie: Thank you, Your Majesty.
 Valorie: It is now my duty and privilege to present the awards for this year's Citizen Tournament.
@@ -78,13 +85,13 @@ Valorie: Aspen Kagiso!
 We love you, Aspen!
 You're the greatest!
 <<move_character Valorie-Solveig FarLeft>>
-<<fade_in_character Aspen-Kagiso>>
+<<show_character Aspen-Kagiso>>
 Aspen: Thank you, Valorie. And thank you, everyone!
 Aspen: This means the world to me and my younger brother and sister. I will be using my prize money to make my forest home a better place for everyone.
 Aspen: Thank you all for your support, and I hope to see you all again real soon!
 Aspen: I love you all!
 Valorie: Thank you, Aspen.
-<<fade_out_character Aspen-Kagiso>>
+<<hide_character Aspen-Kagiso>>
 Valorie: In second place, from our very own capital of Sutheria, the mistress of nature itself:
 Valorie: Lana Elenore!
 //SFX: Crowd cheering
@@ -92,7 +99,7 @@ Valorie: Lana Elenore!
 Lana!!
 Thank you for the flowers!
 You saved my garden!
-<<fade_in_character Lana-Elenore>>
+<<show_character Lana-Elenore>>
 Lana: Thank you, everyone!
 Lana: My goal here at this tournament was to prove to myself that the power of fighting can be used to protect nature, not just hurt it.
 Lana: The power that the earth lent to me can be used by everyone, if only you open your hearts to it.
@@ -100,34 +107,34 @@ Lana: But, well, I only came in second, so it looks like I have a long way to go
 Lana: I hope that you'll continue to give me your trust and support in the future as I work towards my goal of bridging the gap between people and nature.
 Lana: Thank you all for your support! Thank you!
 Valorie: Thank you, Lana.
-<<fade_out_character Lana-Elenore>>
+<<hide_character Lana-Elenore>>
 Valorie: And now, for the winner of the tournament. A practitioner of the art of death itself:
 Valorie: Marianne Moreno!
 //SFX: Crowd cheering
 //SFX: Screen shaking
 I love you, Marianne!
 Turn me into your minion!
-<<fade_in_character Marianne-Moreno-&-Alaister>>
+<<show_character Marianne-Moreno-&-Alaister>>
 Marianne: ...
 Marianne: ...
 Valorie: Umm... Would you like to say a few words?
 Marianne: ...
 Marianne: I would like to thank Alaister.
 Alaister: Woof!
-<<fade_out_character Marianne-Moreno-&-Alaister>>
+<<hide_character Marianne-Moreno-&-Alaister>>
 Valorie: Very nice. That officially concludes the 51st annual Citizen Tournament.
 Valorie: Merchandise and autographs from the winning participants can be ordered from your local city offices.
 Valorie: Thank you all for coming!
-<<fade_out_character Valorie-Solveig>>
+<<hide_character Valorie-Solveig>>
 <<jump MomentaryRelax>>
 ===
 title: MomentaryRelax
 ---
 <<change_background_image "Barracks">>
 OOC: Please imagine that we weren't just using the barracks BG. This is a new location!
-<<fade_in_character Lana-Elenore>>
+<<show_character Lana-Elenore>>
 <<move_character Lana-Elenore Left>>
-<<fade_in_character Aspen-Kagiso>>
+<<show_character Aspen-Kagiso>>
 <<move_character Aspen-Kagiso Right>>
 Lana: ...Whew.
 Lana: I'm glad I got through that okay. I'm not exactly a public speaker.
