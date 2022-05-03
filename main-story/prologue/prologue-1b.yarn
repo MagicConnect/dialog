@@ -1,0 +1,30 @@
+title: Start
+---
+//FIX: Get background art for stadium
+<<change_background_image "Lana_Bedroom">>
+<<move_character Lana-Elenore left>>
+<<move_character Aspen-Kagiso right>>
+<<show_character Lana-Elenore>>
+<<show_character Aspen-Kagiso>>
+
+Lana: What in the world was that thing?
+Lana: It felt... different. Like I couldn't feel it.
+Aspen: What are you talking about? It packed a heck of a punch.
+Lana: Not like that. I mean I couldn't FEEL it.
+Aspen: You just said the same thing, only louder.
+Lana: ...Forget it.
+<<move_character Lana-Elenore FarLeft>>
+<<move_character Aspen-Kagiso left>>
+Lana: Hey, mister! Are you alright?
+//Fix: Get citizen art
+<<move_character Nalia-Belmont right>>
+<<show_character Nalia-Belmont>>
+Citizen: I'm alright. You both saved my life!
+Lana: Did you see anything strange before that weird cloud thing attacked you?
+Citizen: No. But it came from over that way. I'm sure there's more of them.
+Lana: ...
+Aspen: Well, that doesn't really leave us with many options, does it?
+Lana: No, it doesn't.
+Lana: Let's stick together and get rid of them, yeah?
+Aspen: Sounds good!
+===
