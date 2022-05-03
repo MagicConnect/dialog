@@ -1,0 +1,42 @@
+title: Start
+---
+//Fix: This file needs character and background art that is incomplete.
+<<change_background_image "Lana_Bedroom">>
+
+<<move_character Lana-Elenore FarRight>>
+<<show_character Lana-Elenore>>
+<<move_character Neo-Eleyson FarLeft>>
+<<show_character Neo-Eleyson>>
+
+Guard 1: Did you see the tournament finals?
+Guard 2: No.
+Guard 1: Taggart the Ranger killed Flynn Savoy with a hidden dagger. Brutal stuff.
+Guard 2: Too bloody for me.
+Guard 1: You're no fun.
+//SFX: Portal opening
+//VFX: Purple flash
+Guard 1: What the--?
+//SFX: Low droning
+Guard 2: What is that thing?
+Guard 1: Some kind of portal...
+Guard 1: Hang on... I-- I think I see something.
+Guard 2: What do you see?
+Guard 1: Something's coming through!!
+Guard 2: Ahh!!
+<<hide_character Lana-Elenore>>
+<<hide_character Neo-Eleyson>>
+
+//SFX: Something coming through the portal
+<<wait 1>>
+//SFX: Babies crying
+<<move_character Zoe FarRight>>
+<<show_character Zoe>>
+<<move_character Neo-Eleyson FarLeft>>
+<<show_character Neo-Eleyson>>
+Guard 2: What the--
+Guard 1: Two kids.
+Guard 2: What do we do?
+Guard 1: I know someone across the border in Brigand's Drop who would pay well...
+Guard 2: Sell them?! Are you crazy? They're babies!
+Guard 1: Yeah! And who would know? Who would miss them?
+===
