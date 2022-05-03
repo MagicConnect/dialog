@@ -5,8 +5,8 @@ title: Start
 
 <<move_character Lana-Elenore FarRight>>
 <<show_character Lana-Elenore>>
-<<move_character Neo-Eleyson FarLeft>>
-<<show_character Neo-Eleyson>>
+<<move_character Nalia-Belmont FarLeft>>
+<<show_character Nalia-Belmont>>
 
 Guard 1: Did you see the tournament finals?
 Guard 2: No.
@@ -31,8 +31,8 @@ Guard 2: Ahh!!
 //SFX: Babies crying
 <<move_character Zoe FarRight>>
 <<show_character Zoe>>
-<<move_character Neo-Eleyson FarLeft>>
-<<show_character Neo-Eleyson>>
+<<move_character Nalia-Belmont FarLeft>>
+<<show_character Nalia-Belmont>>
 Guard 2: What the--
 Guard 1: Two kids.
 Guard 2: What do we do?
