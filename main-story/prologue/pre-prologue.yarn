@@ -12,6 +12,7 @@ Guard 1: Did you see the tournament finals?
 Guard 2: No.
 Guard 1: Taggart the Ranger killed Flynn Savoy with a hidden dagger. Brutal stuff.
 Guard 2: Too bloody for me.
+Guard 1: ...
 Guard 1: You're no fun.
 //SFX: Portal opening
 //VFX: Purple flash
@@ -24,7 +25,7 @@ Guard 2: What do you see?
 Guard 1: Something's coming through!!
 Guard 2: Ahh!!
 <<hide_character Lana-Elenore>>
-<<hide_character Neo-Eleyson>>
+<<hide_character Nalia-Belmont>>
 
 //SFX: Something coming through the portal
 <<wait 1>>
