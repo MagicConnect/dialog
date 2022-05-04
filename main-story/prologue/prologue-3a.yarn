@@ -1,0 +1,137 @@
+title: Start
+---
+//FIX: Get background for Temple Interior (bloody)
+<<change_background_image "Lana_Bedroom"
+
+<<move_character Lana-Elenore left>>
+<<move_character Aspen-Kagiso right>>
+<<move_character Zoe center>>
+<<show_character Lana-Elenore>>
+<<show_character Aspen-Kagiso>>
+<<show_character Zoe>>
+
+Zoe: I don't know much, so I can't tell you everything.
+Lana: Just tell us what you can, okay?
+
+Zoe: One of the Sagacious Six found an ancient magical tome on an expedition last year.
+Zoe: According to them, the book contained a spell that would allow you to commune with the heavens.
+Zoe: The Holy Sage was creating a new ritual to perform this spell.
+
+Aspen: The... heavens?  Like, the afterlife?
+
+Zoe: Yes.
+Zoe: The Holy Sage sent me an emergency request for help, but the message ended mid-transmission.
+Zoe: The rite wasn't supposed to be completed for another few days.  Something must have gone wrong!
+Zoe: I have to go and aid him!
+Zoe: Now, are you satisfied? Or are you two going to continue to obstruct my duties?
+
+Lana: ...
+Lana: We can help you!  Right, Aspen?
+
+Aspen: Yeah!
+
+Zoe: ...Thank you.  There's no time to waste. Follow me.
+
+//FIX: Get background for Temple Ritual Room
+<<change_background_image "Barracks"
+
+<<move_character Zoe right>>
+<<show_character Zoe>>
+
+Zoe: HOLY SAGE!!
+
+<<move_character Holy-Sage center>>
+<<show_character Holy-Sage>>
+
+Holy Sage: Zoe...
+
+Zoe: Holy Sage, I'm here.
+
+Holy Sage: Zoe... the rite... was a fake.
+Holy Sage: The tome... a forgery.
+
+Zoe: What are you talking about?
+
+Holy Sage: You must... find...
+Holy Sage: Sage Therys...
+Holy Sage: Find the... source... of the tome...
+
+<<hide_character Holy-Sage>>
+
+Zoe: Holy Sage!
+Zoe: ...
+Zoe: HOLY SAGE!
+
+<<move_character Lana-Elenore left>>
+<<move_character Aspen-Kagiso FarLeft>>
+<<show_character Lana-Elenore>>
+<<show_character Aspen-Kagiso>>
+
+Lana: Zoe... I'm sorry, we...
+Lana: I'm sorry we didn't get here sooner...
+Zoe: *Sniff*  No.
+Zoe: We were simply too late. I couldn't have saved him anyway.
+Zoe: His fate was sealed before we entered the temple.
+Aspen: What do we do now?
+Zoe: We have to find Therys.
+Zoe: Maybe he can--
+
+//SFX: Screaming
+
+AAAAIIIIEEEE!!!!
+
+Zoe: More monsters!  Let's go.
+Zoe: We can mourn later.
+
+Lana: Right.
+
+//FIX: Get background for Temple Interior (bloody)
+<<change_background_image "Barracks"
+
+<<move_character Eden-Amsel FarLeft>>
+<<move_character Fuyumi-Hana center>>
+<<move_character Leslie left>>
+<<show_character Eden-Amsel>>
+<<show_character Fuyumi-Hana>>
+<<show_character Leslie>>
+
+Eden: I've healed the bite wound, but, um, please stay off the leg for a while.
+Eden: Y-Your body needs some time to adjust.
+Leslie: Damn things are everywhere. 
+Leslie: I'm glad I found you when I did, Fuyumi. I would have been done for.
+Fuyumi: Thank Eden. I wouldn't have survived this long if it weren't for her.
+
+<<move_character Aspen-Kagiso right>>
+<<move_character Zoe center>>
+<<show_character Aspen-Kagiso>>
+<<show_character Zoe>>
+
+Leslie: Zoe! I found some help!
+Leslie: Meet Fuyumi Hana; expert tracker and a decent spellcaster, too.
+Leslie: And--
+Aspen: Eden?!
+Eden: Aspen! You're alright!!
+Aspen: I'm so happy you're okay! We were at the ceremony and we came running!
+Eden: That's right! How did you do?
+Aspen: Third place.
+Zoe: We don't have time for this! We still have to deal with the monsters that are here first.
+Leslie: I wish I could help. One of those plant things bit my leg.
+Leslie: I'll be fine, but I'm out for the count.
+
+Zoe:
+We'll take care of it. It will be a simple matter.
+
+<Leslie, Zoe, Aspen fade out>
+<Eden, Lana, Fuyumi fade in>
+<Eden_Lana_Fuyumi>
+
+Fuyumi:
+If you wish, I may assist.
+
+Eden:
+Yeah! I can keep you guys safe!
+
+Zoe:
+Thanks.  We can use all the help we can get.
+Here they come...!
+===

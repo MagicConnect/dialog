@@ -17,8 +17,8 @@ Lana: ...Forget it.
 <<move_character Aspen-Kagiso left>>
 Lana: Hey, mister! Are you alright?
 //Fix: Get citizen art
-<<move_character Nalia-Belmont right>>
-<<show_character Nalia-Belmont>>
+<<move_character Citizen right>>
+<<show_character Citizen>>
 Citizen: I'm alright. You both saved my life!
 Lana: Did you see anything strange before that weird cloud thing attacked you?
 Citizen: No. But it came from over that way. I'm sure there's more of them.

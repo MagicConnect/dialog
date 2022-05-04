@@ -1,0 +1,41 @@
+title: Start
+---
+//FIX: Get background for Temple Interior (bloody)
+<<change_background_image "Lana_Bedroom"
+
+<<move_character Lana-Elenore left>>
+<<move_character Aspen-Kagiso center>>
+<<show_character Lana-Elenore>>
+<<show_character Aspen-Kagiso>>
+<<move_character Zoe right>>
+<<show_character Zoe>>
+
+Lana: Huff, huff...
+Aspen: Seriously, what are these things?
+Lana: And why are there more of them?  That bird thing really annoyed me.
+Zoe: You've fought these before, I take it?
+
+Lana: Just the cloud thing, in the castle plaza.
+Lana: What happened here?
+
+Zoe: We can talk about that in due time. We still have work to do.
+Zoe: Leslie!  Gather as many survivors as you can and take them to the inner sanctum.
+
+//FIX: Get artwork for Leslie
+
+<<move_character Ira-Lennox FarRight>>
+<<show_character Ira-Lennox>>
+
+Leslie: ...Understood.
+
+<<hide_character Ira-Lennox>>
+
+Lana: How did these things get here?
+Zoe: There will be a time for that. But I simply must go.
+
+Aspen: You clearly know something about these creatures. So tell us!
+Aspen: How can we help you if we don't even know what we're facing?
+Zoe: ...
+Aspen: ...
+Zoe: Fine.
+===
