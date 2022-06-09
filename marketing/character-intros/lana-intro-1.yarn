@@ -1,7 +1,7 @@
 title:Start
 ---
-<<change_background_image "Lana_Bedroom">>
-<<show_character Lana-Elenore>>
+<<add_background "Bedroom" "LanaBedroom" visible>>
+<<add_character "Lana" "LanaElenore" 0 0 0 visible>>
 Lana: Finally, my own room in the big city!
 Lana: I've lived in a small village with my family my whole life.  This'll be my chance to see the world.
 Lana: It's kinda different than what I was expecting, though.
