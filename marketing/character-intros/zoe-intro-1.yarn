@@ -1,0 +1,25 @@
+title:Start
+---
+<<add_background "Temple" "TempleBase" visible>>
+<<add_character "Holy Sage" "HolySage" -5 0 0 visible>>
+???: Holy Sage?
+Holy Sage: Come in.
+<<add_character "Zoe" "Zoe" 5 0 0 visible>>
+Zoe: Holy Sage, Therys and Leslie have just returned from the expedition. 
+Holy Sage: Oh, wonderful! Soon, we'll be witnessing history, Zoe. Aren't you excited?
+Zoe: Yes, Holy Sage.
+Holy Sage: And to think, when I rescued you and Leslie as children, you were both so fragile. So scared.
+Holy Sage: Now look at you. Powerful spellcasters. You're both going to change the world.
+Zoe: I hope so, Holy Sage...
+Holy Sage: ... I know you still think about your parents. I know it's tough to imagine why they... left you.
+Holy Sage: But you'll always have a family here.
+Zoe: I... I just can't help but wonder if they had a plan for me.
+Holy Sage: Maybe... What's important now is forging your own path, Zoe.
+Holy Sage: You have a lot of anger. But, must learn to not let it take hold of you. Free of anger, you can make your life whatever you want it to be. 
+Zoe: I know. 
+Holy Sage: Happy is the man with no past, as they say. 
+Zoe: I don't know if I agree, Holy Sage.
+Holy Sage: I understand. 
+Holy Sage: Well, we should go greet Lesile and Therys. Are you ready to witness history, Zoe?
+Zoe: Always.
+===
