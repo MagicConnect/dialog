@@ -1,9 +1,10 @@
 title:Start
 ---
-<<add_background "Arena" "RoyalPalaceGrandChamberInteriorNight" visible>>
-<<add_character "Marianne" "MarianneMorenoAlaister" -5 0 0 visible>>
+<<bg_load "RoyalPalaceGrandChamberInteriorNight">>
+<<char_add "Marianne" "MarianneMorenoAlaister" Left visible>>
+<<char_add "Fuyumi" "FuyumiHana" Right>>
 Marianne: Thank you for the escort on such short notice.
-<<add_character "Fuyumi" "FuyumiHana" 5 0 0 visible>>
+<<char_show "Fuyumi" 0.5>>
 Fuyumi: I must admit, your training is unorthodox. Is heading all the way into the mountains strictly necessary?
 Marianne: It helps. It's important enough for me to hire the best guide in the kingdoms.
 Fuyumi: You flatter me.
@@ -12,14 +13,18 @@ Fuyumi: I am afraid not. Good work is never done.
 Marianne: You love your work, do you?
 Fuyumi: I do. Guiding people all over the kingdoms is a reward unto itself.
 Fuyumi: And the money is not bad, either.
-Marianne. I see. What made you take up this line of work?
+Marianne: I see. What made you take up this line of work?
 Fuyumi: Well, I--... As a young girl, I often saw things no one should see. We can leave it at that.
 Marianne: Oh... I'm sorry.
 Fuyumi: Not at all. Keeping people safe is an unalloyed good. There are things I regret, but no one can ever accuse me of not doing my part.
 Marianne: Well, thanks again for the help, Fuyumi.
 Fuyumi: Of course. Goodnight.
-(I NEED TO FIGURE OUT HOW TO HIDE MARIANNE)
+<<char_hide "Marianne" 0.5>>
 Fuyumi: *sigh*
 Fuyumi: You're Fuyumi Hana. You've done so much good.
 Fuyumi: When does all the good start to make the bad fade away?
+<<char_hide "Fuyumi" 0.5>>
+<<wait 0.5>>
+<<bg_blackout 1.0>>
+<<char_clear_all>>
 ===

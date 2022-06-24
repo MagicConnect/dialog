@@ -1,10 +1,12 @@
 title:Start
 ---
-<<add_background "Temple" "TempleBase" visible>>
-<<add_character "Holy Sage" "HolySage" -5 0 0 visible>>
+<<char_clear_all>>
+<<bg_load "TempleBase">>
+<<char_add "Holy Sage" "HolySage" Left visible>>
+<<char_add "Zoe" "Zoe" Right>>
 ???: Holy Sage?
 Holy Sage: Come in.
-<<add_character "Zoe" "Zoe" 5 0 0 visible>>
+<<char_show "Zoe" 0.5 >>
 Zoe: Holy Sage, Therys and Leslie have just returned from the expedition. 
 Holy Sage: Oh, wonderful! Soon, we'll be witnessing history, Zoe. Aren't you excited?
 Zoe: Yes, Holy Sage.
@@ -22,4 +24,8 @@ Zoe: I don't know if I agree, Holy Sage.
 Holy Sage: I understand. 
 Holy Sage: Well, we should go greet Lesile and Therys. Are you ready to witness history, Zoe?
 Zoe: Always.
+<<char_hide "Zoe" 0.5>>
+<<char_hide "Holy Sage" 0.5>>
+<<bg_blackout 1.0>>
+<<char_clear_all>>
 ===

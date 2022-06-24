@@ -1,8 +1,8 @@
 title:Start
 ---
-<<add_background "Barracks" "Barracks" visible>>
-<<add_character "Eden" "EdenAmsel" -5 0 0 visible>>
-<<add_character "Aspen" "AspenKagiso" 5 0 0 visible>>
+<<bg_load "Barracks">>
+<<char_add "Eden" "EdenAmsel" Left visible>>
+<<char_add "Aspen" "AspenKagiso" Right visible>>
 Eden: Hold still.
 Aspen: Ow ow ow ow!
 Eden: It's gonna hurt if you keep squirming.
@@ -26,4 +26,8 @@ Eden: Quit it! I'll think about it, okay?
 Eden: Now you have training to do.
 Aspen: What about you?
 Eden: I'll find something to occupy my time. I'm sure of it.
+<<char_hide "Eden" 0.5>>
+<<char_hide "Aspen" 0.5>>
+<<bg_blackout 1.0>>
+<<char_clear_all>>
 ===

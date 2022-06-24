@@ -1,7 +1,15 @@
 title:Start
 ---
-<<add_background "alias" "background" visible>>
-<<add_character "alias" "alias" 0 0 0 visible>>
+<<char_clear_all>>
+<<bg_load "background" visible>>
+<<char_add "alias" "character" position visible>>
+
+TEXT
+
+<<char_hide "alias" 1.0>>
+<<char_clear_all>>
+<<wait 0.5>>
+<<bg_blackout 1.0>>
 
 
 ===
