@@ -1,13 +1,11 @@
 title: Start
 ---
-//Fix: This file needs character and background art that is incomplete.
-<<change_background_image "Lana_Bedroom">>
 
-<<move_character Lana-Elenore FarRight>>
-<<show_character Lana-Elenore>>
-<<move_character Nalia-Belmont FarLeft>>
-<<show_character Nalia-Belmont>>
-
+<<bg_load "CityStreetsNight">>
+<<char_add "Guard 1" "Guard1" Right>>
+<<char_add "Guard 2" "Guard2" Left>>
+<<char_show "Guard 1" 1.0>>
+<<char_show "Guard 2" 1.0>>
 Guard 1: Did you see the tournament finals?
 Guard 2: No.
 Guard 1: Taggart the Ranger killed Flynn Savoy with a hidden dagger. Brutal stuff.
@@ -24,20 +22,27 @@ Guard 1: Hang on... I-- I think I see something.
 Guard 2: What do you see?
 Guard 1: Something's coming through!!
 Guard 2: Ahh!!
-<<hide_character Lana-Elenore>>
-<<hide_character Nalia-Belmont>>
-
+<<char_hide "Guard 1" 0.5>>
+<<char_hide "Guard 2" 0.5>>
+<<wait_anim>>
+<<char_clear "Guard 1">>
+<<char_add "Guard 1" "Guard1CarryingBabies" Right>>
 //SFX: Something coming through the portal
-<<wait 1>>
+<<wait 1.0>>
 //SFX: Babies crying
-<<move_character Zoe FarRight>>
-<<show_character Zoe>>
-<<move_character Nalia-Belmont FarLeft>>
-<<show_character Nalia-Belmont>>
+<<char_show "Guard 2" 1.0>>
 Guard 2: What the--
+<<char_show "Guard 1" 1.0>>
 Guard 1: Two kids.
 Guard 2: What do we do?
 Guard 1: I know someone across the border in Brigand's Drop who would pay well...
 Guard 2: Sell them?! Are you crazy? They're babies!
-Guard 1: Yeah! And who would know? Who would miss them?
+Guard 1: Yeah? And who would know? Who would miss them?
+Guard 2: ...
+<<char_hide "Guard 1" 1.0>>
+<<char_hide "Guard 2" 1.0>>
+<<wait_anim>>
+<<char_clear_all>>
+<<wait 0.5>>
+<<bg_blackout 1.0>>
 ===

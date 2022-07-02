@@ -1,165 +1,226 @@
 title: Start
 ---
+<<vfx_fg_blackout 0.0>>
+<<bg_load "LanaBedroom">>
 Chaos.
 Fire.
 Corruption. Monsters.
 Destruction. Graves.
 Burning burning burning burning death death deathdeathdeath --
-<<jump WakeUp>>
-===
-title: WakeUp
----
-<<change_background_image "Lana_Bedroom">>
-OOC: Please ignore that this doesn't look like Lana. Her pajamas are full-body.
-<<fade_in_character Beryl-Vegha>>
-//Fix that when pajama Lana is available
+<<vfx_fg_fadein 1.5>>
+<<char_add "Lana" "LanaElenore_Pajamas" Center>>
+<<wait_anim>>
+<<wait 1.0>>
+<<char_show Lana 0.5>>
 Lana: *Gasp* *pant pant pant*
+Lana: Ugh... Another bad dream.
 Lana: What do I have to do to get a good night's rest?
 //SFX: Birds
 Chirp chirp chirp! Chirp chirp chirp!
-Lana: Yeah, yeah, I know, birdies. I've got to hurry.
+Lana: I wish you guys had woken me up instead of that nightmare...
 //SFX: Birds
 Chirp chirp chirp!
-Lana: I wish you guys had woken me up instead of that dream...
-<<fade_out_character Beryl-Vegha>>
+Lana: Yeah, yeah, I know. I've gotta hurry.
+<<char_hide Lana 1.0 true>>
+<<char_clear Lana>>
+<<char_add "Lana" "LanaElenore" Center>>
 //SFX: Clothes rustling
 Rustle rustle
-<<fade_in_character Lana-Elenore>>
-Lana: Alright, all dressed.
-Lana: Need my axe.
-Lana: Looking good as ever, Forester. Time to go.
-<<fade_out_character Lana-Elenore>>
-<<jump TournamentResuts>>
-===
-title:TournamentResuts
----
-//Modify to the plaza when the asset is available.
-<<change_background_image "Barracks">>
-OOC: This should be the plaza, but we don't have that asset yet.
-<<show_character Lana-Elenore>>
+<<char_show Lana 1.0>>
+Lana: Alright, all dressed and ready to go!
+Lana: Looking as good as ever, Forester.
+Lana: Have I ever told you what a nice axe you are?
+Lana: Time to go!
+<<char_hide Lana 1.0 true>>
+<<bg_switch "RoyalPalaceGrandChamberInteriorDay" 1.0 true>>
+
+//SFX: Crowd cheers
+
+<<char_add "Marianne" "MarianneMorenoAlaister" Center>>
+<<char_add "Aspen" "AspenKagiso" Center>>
+<<char_add "Jasmine" "Jasmine" Center>>
+<<char_add "Scarlet" "ScarletSonata" Center>>
+<<char_add "Nalia" "NaliaBelmont" Center>>
+<<char_add "Melodie" "Melodie" Center>>
+
+
+<<char_show Lana 1.0 true>>
+
 Lana: Wow, look at all these people! Are they all here just for the ceremony?
 Bump!
-Lana: Oh, excuse me.
-<<move_character Neo-Elysion FarLeft>>
-<<fade_in_character Neo-Elysion>>
-<<move_character Eden-Amsel Right>>
-<<fade_in_character Eden-Amsel>>
-<<fade_out_character Neo-Elysion>>
-<<move_character Ezra_Victoria Left>>
-<<fade_in_character Ezra_Victoria>>
-<<fade_out_character Eden-Amsel>>
-<<move_character Ira-Lennox FarRight>>
-<<fade_in_character Ira-Lennox>>
-<<fade_out_character Ezra_Victoria>>
-<<fade_out_character Ira-Lennox>>
+Lana: Oh! Excuse me.
+
+<<char_hide Lana 1.0 true>>
+<<char_clear Lana>>
+<<char_show Marianne 0.5>>
+<<char_move Marianne OffscreenLeft 750.0 smoothLerp>>
+<<wait 0.35>>
+<<char_show Aspen 0.5>>
+<<char_move Aspen OffscreenRight 750.0 smoothLerp>>
+<<wait 0.35>>
+<<char_show Jasmine 0.5>>
+<<char_move Jasmine OffscreenLeft 750.0 smoothLerp>>
+<<wait 0.35>>
+<<char_show Scarlet 0.5>>
+<<char_move Scarlet OffscreenRight 750.0 smoothLerp>>
+<<wait 0.35>>
+<<char_show Nalia 0.5>>
+<<char_move Nalia OffscreenLeft 750.0 smoothLerp>>
+<<wait 0.35>>
+<<char_show Melodie 0.5>>
+<<char_move Melodie OffscreenRight 750.0 smoothLerp>>
+<<wait 0.35>>
+<<wait_anim>>
+<<char_clear_all>>
+
 //SFX: Fanfare
 //SFX: Crowd cheering
-(Crowd cheers)
-<<fade_out_character Lana-Elenore>>
-<<fade_in_character King>>
-King: The closing ceremony of the 51st annual Citizen Tournament will now commence!
-King: We've had many capable fighters this year from all over Sutheria. I have been proud to witness the most sportsmanlike Tournament in years!
-King: Such refined combat is something you would never see in the other kingdoms.
-King: This is, in no small part, due to the effort of our Knight of Knights, Valorie Solveig. Her continued dedication to chivalry and fair play have transformed the once-dark tournaments into something more befitting of our kingdom.
 
-<<move_character King Left>>
-<<show_character Valorie-Solveig>>
-<<move_character Valorie-Solveig Right>>
-(Crowd cheers)
-<<fade_out_character King>>
-<<move_character Valorie-Solveig Center>>
+Fanfare
+
+<<char_add "King" "KingofSutheria" Center >>
+<<char_show King 1.0 true>>
+
+
+
+King: The closing ceremony of the 51st annual Citizen Tournament will now commence!
+King: We've had many capable fighters this year from all over the Sutheria. I have been proud to witness the most sportsmanlike Citizen Tournament in years!
+King: This is, in no small part, due to the efforts of our Knight of Knights, Valorie Solveig! 
+King: Her continued dedication to chivalry and fair play have transformed the dark and bloody tournaments of years past into something befitting of my kingdom!
+
+<<char_move King FarLeft 500.00 smoothLerp>>
+<<wait_anim>>
+<<char_dim King>>
+<<char_add "Valorie" "ValorieSolveig" Center>>
+<<char_show Valorie 1.0 true>>
+<<char_add "Marianne" "MarianneMorenoAlaister" Right>>
+<<char_add "Aspen" "AspenKagiso" Right>>
+<<char_add "Lana" "LanaElenore" Right>>
+
 Valorie: Thank you, Your Majesty.
-Valorie: It is now my duty and privilege to present the awards for this year's Citizen Tournament.
-(Crowd cheers)
-Valorie: In third place, hailing from the distant forest of Entmir, the Felid whose arrows have never failed to find their mark:
+Valorie: It is now my duty and privilege to present the awards.
+Valorie: In third place, hailing from the distant forest of Dunhollow, the Felid whose arrows never fail to find their mark:
 Valorie: Aspen Kagiso!
+
 //SFX: Crowd cheering
 //VFX: Screen shaking
-We love you, Aspen!
-You're the greatest!
-<<move_character Valorie-Solveig FarLeft>>
-<<fade_in_character Aspen-Kagiso>>
+
+Crowd: We love you, Apsen! You're the greatest!
+<<char_move Valorie Left 500.0 smoothLerp>>
+<<char_move King OffscreenLeft 500.00 smoothLerp waitForAnimation>>
+<<char_clear King>>
+<<char_show Aspen 1.0 true>>
+
 Aspen: Thank you, Valorie. And thank you, everyone!
 Aspen: This means the world to me and my younger brother and sister. I will be using my prize money to make my forest home a better place for everyone.
-Aspen: Thank you all for your support, and I hope to see you all again real soon!
+Aspen: Thank you for all your support, and I hope to see you all again real soon!
 Aspen: I love you all!
+
 Valorie: Thank you, Aspen.
-<<fade_out_character Aspen-Kagiso>>
-Valorie: In second place, from our very own capital of Sutheria, the mistress of nature itself:
+
+<<char_hide Aspen 1.0 true>>
+
+Valorie: In second place, from the country village of Eadestown, the mistress of nature herself:
 Valorie: Lana Elenore!
-//SFX: Crowd cheering
-//VFX: Screen shaking
-Lana!!
-Thank you for the flowers!
-You saved my garden!
-<<fade_in_character Lana-Elenore>>
+
+Crowd: Lana!! Thank you for the flowers! You saved my garden!
+
+<<char_show Lana 1.0 true>>
+
 Lana: Thank you, everyone!
-Lana: My goal here at this tournament was to prove to myself that the power of fighting can be used to protect nature, not just hurt it.
-Lana: The power that the earth lent to me can be used by everyone, if only you open your hearts to it.
-Lana: But, well, I only came in second, so it looks like I have a long way to go, myself.
-Lana: I hope that you'll continue to give me your trust and support in the future as I work towards my goal of bridging the gap between people and nature.
+Lana: My goal here at this tournament was to prove to myself that the power of fighting can be used to protect nature, not hurt it.
+Lana: The power that nature has lent to me can be used by everyone, if you only open your hearts to it.
 Lana: Thank you all for your support! Thank you!
+
 Valorie: Thank you, Lana.
-<<fade_out_character Lana-Elenore>>
-Valorie: And now, for the winner of the tournament. A practitioner of the art of death itself:
+
+<<char_hide Lana 1.0 true>>
+
+Valorie: And now, the winner of the tournament. 
+Valroie: Mistress of the dark arts, healer extraordinaire, and friend of death:
 Valorie: Marianne Moreno!
-//SFX: Crowd cheering
-//SFX: Screen shaking
-I love you, Marianne!
-Turn me into your minion!
-<<fade_in_character Marianne-Moreno-&-Alaister>>
-Marianne: ...
-Marianne: ...
+
+
+Crowd: I love you, Marianne! Turn me into your minion!
+
+<<wait 0.75>>
+<<char_show Marianne 1.50 true>>
+
+Marianne:...
+Marianne:...
+
 Valorie: Umm... Would you like to say a few words?
-Marianne: ...
-Marianne: I would like to thank Alaister.
+
+Marianne:...
+Marianne: I would like to thank my Alaister.
+Marianne:...
+
 Alaister: Woof!
-<<fade_out_character Marianne-Moreno-&-Alaister>>
-Valorie: Very nice. That officially concludes the 51st annual Citizen Tournament.
+
+<<wait 0.5>>
+<<char_hide Marianne 1.50 true>>
+
+
+Valorie: Very nice. That officially concludes the 51st annual Citizen Tournament!
 Valorie: Merchandise and autographs from the winning participants can be ordered from your local city offices.
 Valorie: Thank you all for coming!
-<<fade_out_character Valorie-Solveig>>
-<<jump MomentaryRelax>>
-===
-title: MomentaryRelax
----
-<<change_background_image "Barracks">>
-OOC: Please imagine that we weren't just using the barracks BG. This is a new location!
-<<fade_in_character Lana-Elenore>>
-<<move_character Lana-Elenore Left>>
-<<fade_in_character Aspen-Kagiso>>
-<<move_character Aspen-Kagiso Right>>
-Lana: ...Whew.
-Lana: I'm glad I got through that okay. I'm not exactly a public speaker.
-Aspen: I think you did great! You spoke from the heart, and I could feel your love for the earth!
-Lana: Thanks, Aspen. You did good up there, too. I'm really happy for you.
-Aspen: Thank you!
-Aspen: I just wish I could have heard what's in Marianne's heart, too.
-Aspen: She beat both of us, so I was hoping to hear what drives her. But she's just as quiet now as she was during the tourney.
-Aspen: Do you think she's driven by her pet dog?
-Lana: No. There's got to be more to it than that.
-Lana: Where is she, anyway? Weren't we all supposed to come back here so we don't get mobbed by the crowd?
-Aspen: She stopped by for a moment, then left. I couldn't even pet her doggy and tell him what a good boy he is.
-Lana: I see —
-//SFX: Screaming
+<<char_hide Valorie 1.0>>
+<<wait_anim>>
+<<char_clear_all>>
+<<vfx_fg_blackout 1.0>>
+<<wait_anim>>
+<<char_add "Lana" "LanaElenore" Left visible>>
+<<char_add "Aspen" "AspenKagiso" Right visible>>
+<<bg_switch "Barracks">>
+<<wait 0.5>>
+<<vfx_fg_fadein 1.0>>
+<<wait_anim>>
+
+Aspen: You did great out there, Lana!
+
+Lana: Thanks. I never know what to say at these things.
+
+Aspen: There's always the silent option. Like Marianne.
+Aspen: What's her deal, you think?
+
+Lana: What do you mean?
+
+Aspen: I'm fighting for my siblings, you're fighting to bring people and nature together...
+Aspen: Marianne won the whole tournament and no one knows anything about what makes her tick.
+Aspen: Is it just that dog that drives her?
+
+Lana: Maybe. There's got to be more to it than that, I guess.
+
+
 AAAAAH!
 AIIIYYYEEEE!
-Lana: What —?
-Aspen: Let's go.
-<<hide_character Aspen-Kagiso>>
-<<hide_character Lana-Elenore>>
-<<jump CorruptionBegins>>
-===
-title:CorruptionBegins
----
-<<change_background_image "Barracks">>
-OOC: We're really getting a lot of erroneous use out of this BG. One day we'll have the plaza BG.
-<<show_character Lana-Elenore>>
-<<move_character Lana-Elenore Left>>
-<<show_character Aspen-Kagiso>>
-<<move_character Aspen-Kagiso Right>>
-Lana: What's going on?
+
+Lana: What was that?
+
+Aspen: C'mon!
+
+<<char_hide Lana 0.5>>
+<<char_hide Aspen 0.5>>
+<<wait_anim>>
+<<char_move Lana OffscreenLeft 10000.0>>
+<<char_move Aspen OffscreenLeft 10000.0>>
+<<bg_switch "RoyalPalaceGrandChamberInteriorDay" 1.0>>
+<<wait 0.5>>
+<<char_show Lana 0.5>>
+<<char_show Aspen 0.5>>
+<<char_move Lana Center 750.0>>
+<<wait 0.25>>
+<<char_move Aspen Left 650.0>>
+
+Lana: What's going on?!
+
+Aspen: What in the world-- What is that?!
+Aspen: I've never seen a creature like that before!
 Aspen: Look over there! Those people are being attacked!
-Aspen: I've never seen a creature like that before. They're not like that in the forest!
-Lana: Help first, questions later! Let's go!
+Aspen: We've got to help them!
+
+<<vfx_fg_blackout 1.0>>
+<<wait_anim>>
+<<char_clear_all>>
+
 ===

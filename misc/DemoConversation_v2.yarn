@@ -1,0 +1,45 @@
+title:Start
+---
+<<char_clear_all>>
+<<bg_load "CityStreetsDay">>
+Voice: The following is a test of all major functions of Magic Connect's scene editor.
+Voice: All functions, stand by.
+<<vfx_fg_blackout 1.0>>
+<<wait_anim>>
+Voice: Black out nominal.
+<<vfx_fg_fadein 1.0>>
+<<wait_anim>>
+Voice: Fade in nominal.
+<<bg_switch "CityStreetsNight" 1.0>>
+<<wait_anim>>
+Voice: Background switch nominal.
+<<char_add "Lana" "LanaElenore" Center>>
+<<char_show Lana 1.0>>
+Lana: Hey! What the--
+Voice: Character show nominal.
+Lana: What's going on?
+<<char_move Lana OffscreenLeft 750.0 smoothLerp>>
+Lana: Hey!
+<<char_move Lana OffscreenRight 750.0 smoothLerp>>
+Lana: Woah!
+<<char_move Lana Center 750.0 smoothLerp>>
+Voice: Character move nominal.
+<<char_dim Lana 1.0>>
+Lana: --!
+Lana: I can't see!
+<<char_undim Lana 1.0>>
+Lana: Cut it out!
+Voice: Character dimming nominal.
+<<char_hide Lana 1.0>>
+<<wait_anim>>
+<<char_clear Lana>>
+Voice: Character cleared from memory.
+Voice: All major functions nominal.
+Voice: This concludes our test.
+Voice: Shutting down. 
+<<char_clear_all>>
+<<wait 0.5>>
+<<bg_blackout 1.0>>
+
+
+===
