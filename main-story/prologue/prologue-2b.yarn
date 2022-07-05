@@ -1,41 +1,181 @@
 title: Start
 ---
-//FIX: Get background for Temple Interior (bloody)
-<<change_background_image "Lana_Bedroom"
+<<vfx_fg_blackout 0.1>>
+<<wait_anim>>
+<<bg_load "CityStreetsDay">>
+<<char_add "Lana" "LanaElenore" Left visible>>
+<<char_add "Aspen" "AspenKagiso" Right visible>>
+<<vfx_fg_fadein "0.5">>
 
-<<move_character Lana-Elenore left>>
-<<move_character Aspen-Kagiso center>>
-<<show_character Lana-Elenore>>
-<<show_character Aspen-Kagiso>>
-<<move_character Zoe right>>
-<<show_character Zoe>>
+Lana: What even are these things?
 
-Lana: Huff, huff...
-Aspen: Seriously, what are these things?
-Lana: And why are there more of them?  That bird thing really annoyed me.
-Zoe: You've fought these before, I take it?
+Aspen: C'mon! I can still hear that spellcaster!
 
-Lana: Just the cloud thing, in the castle plaza.
-Lana: What happened here?
+<<char_move Aspen OffscreenRight 750.0 smoothLerp>>
+<<wait 0.25>>
+<<char_move Lana OffscreenRight 750.0 smoothLerp>>
+<<wait_anim>>
+<<vfx_fg_blackout 0.5>>
+<<wait_anim>>
+<<char_move Aspen OffscreenLeft 1000000 smoothLerp>>
+<<char_move Lana OffscreenLeft 1000000 smoothLerp>>
+<<char_add "Zoe" "Zoe" Right visible>>
+<<bg_switch "TempleBase" 0.1>>
+<<vfx_fg_fadein 1.0>>
+<<wait_anim>>
 
-Zoe: We can talk about that in due time. We still have work to do.
-Zoe: Leslie!  Gather as many survivors as you can and take them to the inner sanctum.
+???: This is bad, this is very, very bad.
+???: I need to keep moving.
 
-//FIX: Get artwork for Leslie
+<<char_move Lana Left 750.0 smoothLerp>>
+<<wait 0.25>>
+<<char_move Aspen FarLeft 750.0 smoothLerp>>
+<<wait 0.5>>
 
-<<move_character Ira-Lennox FarRight>>
-<<show_character Ira-Lennox>>
+Lana: Hey, you! Are you alright?
 
-Leslie: ...Understood.
+???: ...
+???: I'm fine.
 
-<<hide_character Ira-Lennox>>
+Aspen: What's your name?
 
-Lana: How did these things get here?
-Zoe: There will be a time for that. But I simply must go.
+???: Zoe.
 
-Aspen: You clearly know something about these creatures. So tell us!
-Aspen: How can we help you if we don't even know what we're facing?
+Zoe: Look, it's was nice meeting you, but I have to go.
+
+Aspen: Wait a minute! Do you know anything about these monsters?
+
+Zoe: I know they bleed, I know they die.
+
+Lana: Do you have any idea what's going on?
+
+Zoe: I don't have time to explain. I have to reverse the ritual soon or the whole kingdom's gonna be overrun.
+Zoe: This is no place for citizens. Get out of here, both of you.
+
+<<char_move Zoe OffscreenRight 600.0 smoothLerp>>
+<<wait_anim>>
+
+Lana: Ritual?
+<<char_move Lana OffscreenRight 600.0 smoothLerp>>
+<<wait 0.5>>
+
+Aspen: Citizens?!
+<<char_move Aspen OffscreenRight 600.0 smoothLerp>>
+<<wait_anim>>
+//FIX: Get the proper background for this
+<<vfx_fg_blackout 0.5>>
+<<wait_anim>>
+<<char_move Zoe OffscreenLeft 10000000>>
+<<char_move Lana OffscreenLeft 10000000>>
+<<char_move Aspen OffscreenLeft 10000000>>
+<<wait_anim>>
+<<bg_load "TempleBase">>
+<<vfx_fg_fadein 0.5>>
+<<wait_anim>>
+<<char_move Zoe Right 600.00 smoothLerp>>
+<<wait 1.5>>
+<<char_move Lana Center 650.00 smoothLerp>>
+<<wait 0.2>>
+<<char_move Aspen Left 650.00 smoothLerp>>
+
+
+Lana: Hang on--
+
+Zoe: I need to find the Holy Sage; he was there when the ritual happened.
+Zoe: If you want to follow me, fine. But stay out of my way. Things are spiraling out of control.
+Zoe: If I work quickly, maybe I can set things right before everything gets out of hand.
+
+Lana: What do you mean, ritual? What ritual?
+Lana: What are those things?
+
+Zoe: I don't have time--
+<<char_move Aspen Right 500.0 smoothLerp>>
+<<char_move Zoe Center 500.0 smoothLerp>>
+<<char_move Lana Left 500.0 smoothLerp>>
+
+
+Aspen: You listen here! If you know something about these monsters, you need to tell us!
+Aspen: How are we supposed to survive if we don't even know what we're fighting?
+Aspen: We need to work together!
+
+Zoe: Work together?! I don't even know you!!
+
+Aspen: We're not some helpless citizens. Tournament champions, the both of us!
+Aspen: We're trying to help people! And I'm not gonna get killed because some stuck up spellcaster was too busy to tell me what's really going on!!
+
+Lana: ...
+Lana: Wow.
 Zoe: ...
-Aspen: ...
 Zoe: Fine.
+Zoe: Some members of the Temple performed a ritual on an ancient Victaean tome. 
+Zoe: It was supposed to allow us to commune with the heavens again, but something went wrong.
+Zoe: It opened up a portal and monsters started showing up everywhere. I've never seen anything like it.
+Zoe: They seem to sit outside the normal magical paradigm. Corrupted.
+Zoe: I don't know if they have any weaknesses, but they're smart. And aggressive.
+Zoe: Now, are you satisfied? Or are you gonna keep me from fixing the catastrophe we're in?!
+
+Aspen: ...
+Aspen: Thank you.
+
+Zoe: Now get out of my way.
+
+<<char_move Zoe OffscreenRight 600.0 smoothLerp>>
+<<wait 1.15>>
+<<char_move Lana OffscreenRight 600.0 smoothLerp>>
+<<char_move Aspen OffscreenRight 600.0 smoothLerp>>
+<<wait_anim>>
+<<char_hide Lana>>
+<<char_hide Aspen>>
+<<char_move Lana Right 1000000>>
+<<char_move Aspen FarRight 100000>>
+<<vfx_fg_blackout 1.0>>
+<<wait_anim>>
+<<bg_switch "TempleBase" 0.1>>
+//FIX: Get the proper background for this!
+<<char_add "Holy Sage" "HolySageDying" Left visible>>
+<<vfx_fg_fadein 0.5>>
+
+
+Zoe:HOLY SAGE!!
+
+<<char_move Zoe Center 700.0 smoothLerp>>
+<<wait_anim>>
+
+Zoe: Holy Sage!
+Holy Sage: Zoe...
+Zoe: Holy Sage, I'm here.
+Holy Sage: Zoe... the rite... was a fake.
+Holy Sage: The tome... a forgery.
+Zoe: What are you talking about?
+Holy Sage: You must... find...
+Holy Sage: Sage Therys...
+Holy Sage: Find the... source... of the tome...
+
+<<char_hide "Holy Sage" 2.0>>
+
+Zoe: Holy Sage!
+Zoe: HOLY SAGE!
+
+<<char_show Lana 1.0>>
+<<char_show Aspen 1.0>>
+
+Lana: Zoe... I'm sorry, we--
+
+Zoe:I don't want your apology. You've already done enough. *sniff*
+Zoe: I need to find Therys.
+Zoe: Maybe he can--
+
+//SFX: Screaming
+
+AIIIIEEEEE!!
+
+Zoe: --!
+Zoe: Leslie!!
+
+<<char_hide Lana 1.0>>
+<<char_hide Aspen 1.0>>
+<<char_hide Zoe 1.0>>
+<<vfx_fg_blackout 1.0>>
+<<wait_anim>>
+<<char_clear_all>>
 ===

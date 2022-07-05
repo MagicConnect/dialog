@@ -1,77 +1,55 @@
 title: Start
 ---
-//FIX: Get background for City Streets
-<<change_background_image "Lana_Bedroom"
-//SFX: Screaming
-<<move_character Lana-Elenore FarLeft>>
-<<move_character Aspen-Kagiso left>>
-<<show_character Lana-Elenore>>
-<<show_character Aspen-Kagiso>>
+//FIX: Swap for art of Temple Exterior
+<<vfx_fg_blackout 0.1>>
+<<wait_anim>>
+<<bg_load "CityStreetsDay">>
+<<char_add "Lana" "LanaElenore" OffscreenLeft visible>>
+<<char_add "Aspen" "AspenKagiso" OffscreenLeft visible>>
+<<char_add "Citizen" "Citizen" OffscreenRight Visible>>
+<<vfx_fg_fadein "0.5">>
+<<wait_anim>>
+<<char_move Aspen Center 500.0 smoothLerp>>
+<<wait 0.25>>
+<<char_move Lana Left 500.0 smoothLerp>>
+<<wait_anim>>
 
-Lana: It sounds like it's coming from over there!
-Aspen: From that big building? What is that?
-Lana: That's the Temple of the Sage. 
-Lana:The most powerful sorcerers in the kingdom come there to study and train.
-Aspen: Well, whatever it is, it sounds like they need our help.
-Aspen: I don't know about you, but I don't want to just stand here and listen.
-Lana: No, you're right. Let's get moving.
+Lana: This must be the place.
+Aspen: Yeah. But I don't see any--
+Citizen: M-m-monsters! Run for your lives!
 
-//FIX: Get background for Temple Exterior
-<<change_background_image "Barracks"
-//SFX: Screaming
-Citizen: M-monster! Run for your lives!!
+<<char_move Citizen OffscreenLeft 1250.0>>
+<<wait_anim>>
 
-<<move_character Lana-Elenore FarLeft>>
-<<move_character Aspen-Kagiso left>>
-<<show_character Lana-Elenore>>
-<<show_character Aspen-Kagiso>>
+//SFX: Thud, crashing
+CRASH!!
+
+Aspen: I spoke too soon...
+
+//SFX: Distant sword clanging
+//SFX: Distant spellcasting
+//SFX: Distant monster death sounds
+
+Aspen: --!
+Aspen: Do you hear that?
+
+Lana: I hear something close...
+
+Aspen: That sounds like a spellcaster!
+
+Lana: Aspen--
+
+Aspen: We should go help them!
+
+Lana: ASPEN!!
+
+Aspen: What?
 
 Lana: We've got company!
-Aspen: Monsters. When did they get there?
-Lana: Don't think about it, just focus on the fight ahead of us.
-Aspen: Right. Let's --
 
-//VFX: Slice
-//SFX: Shing
-
-Aspen: Huh?!
-
-<<move_character Zoe right>>
-<<show_character Zoe>>
-
-???: More of them? Hmph.  How simple.
-Lana: All of them...? At once?
-Lana: Who are you?
-???: ...Zoe.
-Lana: Wait, you're Zoe?!
-Aspen: Huh? Zoe who?
-Zoe: Gotta go. I'm in a rush.
-Lana: Wait, hold on --
-
-<<hide_character Zoe>>
-
-Lana: And she's gone. Aspen, let's follow her.
-Lana: She's the most powerful priestess in the temple! If anyone knows how to stop these things, it's her.
-Aspen: Are we sure we can handle it?
-Lana: I don't think we have a choice.
-
-//FIX: Get background for Temple Interior (bloody)
-<<change_background_image "Lana_Bedroom">>
-
-<<move_character Lana-Elenore left>>
-<<move_character Aspen-Kagiso center>>
-<<show_character Lana-Elenore>>
-<<show_character Aspen-Kagiso>>
-
-Lana: --!
 Aspen: --!
 
-<<move_character Zoe right>>
-<<show_character Zoe>>
-
-Zoe: So you came after all? Good.
-Lana: What... happened in here?
-Zoe: We can talk later. We have fighting to do!
-Zoe: I'll take these guys, you two take those. Ready?
-Lana: Ready!
+<<vfx_fg_blackout 1.0>>
+<<wait_anim>>
+<<char_clear_all>>
 ===

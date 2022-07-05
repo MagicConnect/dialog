@@ -1,30 +1,63 @@
 title: Start
 ---
-//FIX: Get background art for stadium
-<<change_background_image "Lana_Bedroom">>
-<<move_character Lana-Elenore left>>
-<<move_character Aspen-Kagiso right>>
-<<show_character Lana-Elenore>>
-<<show_character Aspen-Kagiso>>
+<<vfx_fg_blackout 0.1>>
+<<wait_anim>>
+<<bg_load "RoyalPalaceGrandChamberInteriorDay">>
+<<vfx_fg_fadein 0.5>>
+<<wait_anim>>
+<<char_add "Lana" "LanaElenore" Right>>
+<<char_add Aspen "AspenKagiso" Left>>
+<<char_show Lana 1.0>>
+<<char_show Aspen 1.0>>
 
 Lana: What in the world was that thing?
-Lana: It felt... different. Like I couldn't feel it.
-Aspen: What are you talking about? It packed a heck of a punch.
-Lana: Not like that. I mean I couldn't FEEL it.
-Aspen: You just said the same thing, only louder.
-Lana: ...Forget it.
-<<move_character Lana-Elenore FarLeft>>
-<<move_character Aspen-Kagiso left>>
-Lana: Hey, mister! Are you alright?
-//Fix: Get citizen art
-<<move_character Citizen right>>
-<<show_character Citizen>>
-Citizen: I'm alright. You both saved my life!
-Lana: Did you see anything strange before that weird cloud thing attacked you?
-Citizen: No. But it came from over that way. I'm sure there's more of them.
-Lana: ...
-Aspen: Well, that doesn't really leave us with many options, does it?
-Lana: No, it doesn't.
-Lana: Let's stick together and get rid of them, yeah?
-Aspen: Sounds good!
+Lana: I've never seen anything like it.
+Aspen: Hey, mister, are you alright?
+
+<<char_add "Citizen" "Citizen" Right>>
+<<char_move Lana Center 500.0 smoothLerp>>
+<<wait_anim>>
+<<char_show Citizen 1.0>>
+<<wait_anim>>
+
+Citizen: I... I'm alright. You both saved my life.
+Lana: What can you tell us about the thing that attacked you?
+Citizen: I saw it coming from the Temple. Terrible looking thing.
+Lana:Temple?
+
+Citizen: Are you from out of town or something?
+Citizen: The Temple of the Sage! The best sorcerers in Sutheria are trained there.
+
+//SFX: Chaos, shattering glass
+//SFX: Screams
+
+Citizen: That doesn't sound good.
+Aspen: No it doesn't.
+Lana: You should get to someplace safe, mister.
+Citizen: What about you?
+Lana: Well, I-- uh... We--
+Aspen: Don't worry about us. We're professionals.
+Aspen: Now get going.
+Citzen: Fair enough. I'm outta here!
+
+<<char_hide Citizen 1.0>>
+<<wait_anim>>
+<<char_clear Citizen>>
+<<char_move Lana Right 500.0 smoothLerp>>
+<<char_move Aspen Left 500.0 smoothLerp>>
+
+Lana: Professionals?
+Aspen: We both just placed in a combat tournament. We can handle ourselves.
+Aspen: Plus, it's a good title. Rolls of the tongue.
+Lana: I think we ought to stick together. Who knows what else is crawling around here.
+Lana: What do you say? Together?
+Aspen: Together.
+Aspen: Now, let's head to the temple.
+<<char_move Lana OffscreenRight 500.0 smoothLerp>>
+<<char_move Aspen OffscreenRight 500.0 smoothLerp>>
+<<wait_anim>>
+<<vfx_fg_blackout 1.0>>
+<<wait_anim>>
+<<char_clear_all>>
+
 ===
