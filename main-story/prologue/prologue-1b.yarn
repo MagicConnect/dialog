@@ -1,5 +1,6 @@
 title: Start
 ---
+<<set_autodim_time 0.2>>
 <<vfx_fg_blackout 0.1>>
 <<wait_anim>>
 <<bg_load "RoyalPalaceGrandChamberInteriorDay">>
@@ -10,7 +11,7 @@ title: Start
 <<char_show Lana 1.0>>
 <<char_show Aspen 1.0>>
 
-Lana: What in the world was that thing?
+Aspen: What in the world was that thing?
 Lana: I've never seen anything like it.
 Aspen: Hey, mister, are you alright?
 
@@ -38,13 +39,13 @@ Citizen: What about you?
 Lana: Well, I-- uh... We--
 Aspen: Don't worry about us. We're professionals.
 Aspen: Now get going.
-Citzen: Fair enough. I'm outta here!
+Citizen: Fair enough. I'm outta here!
 
 <<char_hide Citizen 1.0>>
 <<wait_anim>>
 <<char_clear Citizen>>
-<<char_move Lana Right 500.0 smoothLerp>>
-<<char_move Aspen Left 500.0 smoothLerp>>
+<<char_move Lana Right 500.0 smoothLerp false>>
+<<char_move Aspen Left 500.0 smoothLerp false>>
 
 Lana: Professionals?
 Aspen: We both just placed in a combat tournament. We can handle ourselves.
@@ -53,8 +54,8 @@ Lana: I think we ought to stick together. Who knows what else is crawling around
 Lana: What do you say? Together?
 Aspen: Together.
 Aspen: Now, let's head to the temple.
-<<char_move Lana OffscreenRight 500.0 smoothLerp>>
-<<char_move Aspen OffscreenRight 500.0 smoothLerp>>
+<<char_move Lana OffscreenRight 500.0 smoothLerp false>>
+<<char_move Aspen OffscreenRight 500.0 smoothLerp false>>
 <<wait_anim>>
 <<vfx_fg_blackout 1.0>>
 <<wait_anim>>

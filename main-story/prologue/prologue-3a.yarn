@@ -1,137 +1,112 @@
 title: Start
 ---
+<<set_autodim_time 0.2>>
 //FIX: Get background for Temple Interior (bloody)
-<<change_background_image "Lana_Bedroom"
+<<set_autodim_off>>
+<<vfx_fg_blackout>>
+<<bg_load "TempleBase">>
+<<char_add "Eden" "EdenAmsel" Left visible>>
+<<char_add "Leslie" "BerylVegha" Center visible>>
+<<char_add "Fuyumi" "FuyumiHana" Right visible>>
+<<char_add "Zoe" "Zoe" OffscreenLeft visible>>
+<<char_add "Lana" "LanaElenore" Left>>
+<<char_add "Aspen" "AspenKagiso" OffscreenLeft visible>>
+<<char_dim Eden>>
+<<char_dim Leslie>>
+<<char_dim Fuyumi>>
+<<vfx_fg_fadein 1.0 true>>
 
-<<move_character Lana-Elenore left>>
-<<move_character Aspen-Kagiso right>>
-<<move_character Zoe center>>
-<<show_character Lana-Elenore>>
-<<show_character Aspen-Kagiso>>
-<<show_character Zoe>>
+<<char_undim Eden 0.2>>
+???: I've healed the bite wound. But, um, please stay off the leg for a while.
+???: Y-Your body needs some time to adjust.
+<<char_dim Eden 0.2>>
+<<char_undim Leslie 0.2>>
+???: Damn things are everywhere. 
+???: I'm glad I found you when I did, Eden. I would have been done for.
+<<char_dim Leslie 0.2>>
+<<set_autodim_on>>
 
-Zoe: I don't know much, so I can't tell you everything.
-Lana: Just tell us what you can, okay?
+Eden: You should thank Fuyumi. I wouldn't have made it here if it weren't for her.
 
-Zoe: One of the Sagacious Six found an ancient magical tome on an expedition last year.
-Zoe: According to them, the book contained a spell that would allow you to commune with the heavens.
-Zoe: The Holy Sage was creating a new ritual to perform this spell.
+Fuyumi: I am not sure how long we can stay here. The monsters are growing ever more numerous.
 
-Aspen: The... heavens?  Like, the afterlife?
 
-Zoe: Yes.
-Zoe: The Holy Sage sent me an emergency request for help, but the message ended mid-transmission.
-Zoe: The rite wasn't supposed to be completed for another few days.  Something must have gone wrong!
-Zoe: I have to go and aid him!
-Zoe: Now, are you satisfied? Or are you two going to continue to obstruct my duties?
+<<char_hide Eden 1.0 false>>
 
-Lana: ...
-Lana: We can help you!  Right, Aspen?
+<<char_move Fuyumi FarRight 500.0 true false>>
+<<char_move Leslie Right 500.0 true false>>
+<<char_move Zoe Center 750.0 false>>
 
-Aspen: Yeah!
 
-Zoe: ...Thank you.  There's no time to waste. Follow me.
+Zoe: Leslie!!
 
-//FIX: Get background for Temple Ritual Room
-<<change_background_image "Barracks"
 
-<<move_character Zoe right>>
-<<show_character Zoe>>
+Leslie: Zoe! Thank goodness you're here! I barely made it out of the ritual room alive.
 
-Zoe: HOLY SAGE!!
+Zoe: What happened?
 
-<<move_character Holy-Sage center>>
-<<show_character Holy-Sage>>
+Leslie: Everything went sideways. They were performing a spell from the tome in Old Victaean.
 
-Holy Sage: Zoe...
+Zoe: What did the spell say?
 
-Zoe: Holy Sage, I'm here.
+Leslie: Translated, it would be something like "Bridge between realms, hear our cry" and so on.
+Leslie: You guys need to get out of here. I'd be dead if it weren't for my new friends.
+Leslie: Meet Fuyumi Hana: expert tracker and a decent spellcaster, too.
 
-Holy Sage: Zoe... the rite... was a fake.
-Holy Sage: The tome... a forgery.
+Fuyumi: I wish we could have met under less dire circumstances...
 
-Zoe: What are you talking about?
+Leslie: And I would also like you to meet--
 
-Holy Sage: You must... find...
-Holy Sage: Sage Therys...
-Holy Sage: Find the... source... of the tome...
-
-<<hide_character Holy-Sage>>
-
-Zoe: Holy Sage!
-Zoe: ...
-Zoe: HOLY SAGE!
-
-<<move_character Lana-Elenore left>>
-<<move_character Aspen-Kagiso FarLeft>>
-<<show_character Lana-Elenore>>
-<<show_character Aspen-Kagiso>>
-
-Lana: Zoe... I'm sorry, we...
-Lana: I'm sorry we didn't get here sooner...
-Zoe: *Sniff*  No.
-Zoe: We were simply too late. I couldn't have saved him anyway.
-Zoe: His fate was sealed before we entered the temple.
-Aspen: What do we do now?
-Zoe: We have to find Therys.
-Zoe: Maybe he can--
-
-//SFX: Screaming
-
-AAAAIIIIEEEE!!!!
-
-Zoe: More monsters!  Let's go.
-Zoe: We can mourn later.
-
-Lana: Right.
-
-//FIX: Get background for Temple Interior (bloody)
-<<change_background_image "Barracks"
-
-<<move_character Eden-Amsel FarLeft>>
-<<move_character Fuyumi-Hana center>>
-<<move_character Leslie left>>
-<<show_character Eden-Amsel>>
-<<show_character Fuyumi-Hana>>
-<<show_character Leslie>>
-
-Eden: I've healed the bite wound, but, um, please stay off the leg for a while.
-Eden: Y-Your body needs some time to adjust.
-Leslie: Damn things are everywhere. 
-Leslie: I'm glad I found you when I did, Fuyumi. I would have been done for.
-Fuyumi: Thank Eden. I wouldn't have survived this long if it weren't for her.
-
-<<move_character Aspen-Kagiso right>>
-<<move_character Zoe center>>
-<<show_character Aspen-Kagiso>>
-<<show_character Zoe>>
-
-Leslie: Zoe! I found some help!
-Leslie: Meet Fuyumi Hana; expert tracker and a decent spellcaster, too.
-Leslie: And--
 Aspen: Eden?!
+<<char_move Eden Right 1000000000000>>
+<<char_hide Zoe 0.5 false>>
+<<char_hide Leslie 0.5 false>>
+<<char_hide Fuyumi 0.5 false>>
+<<char_show Eden 1.0>>
+<<char_move Aspen Left 750.0>>
+
 Eden: Aspen! You're alright!!
+
 Aspen: I'm so happy you're okay! We were at the ceremony and we came running!
+
 Eden: That's right! How did you do?
-Aspen: Third place.
-Zoe: We don't have time for this! We still have to deal with the monsters that are here first.
-Leslie: I wish I could help. One of those plant things bit my leg.
-Leslie: I'll be fine, but I'm out for the count.
 
-Zoe:
-We'll take care of it. It will be a simple matter.
+Aspen: Third place!
 
-<Leslie, Zoe, Aspen fade out>
-<Eden, Lana, Fuyumi fade in>
-<Eden_Lana_Fuyumi>
+Eden: That's not bad!
 
-Fuyumi:
-If you wish, I may assist.
+<<char_show Zoe 0.2 false>>
 
-Eden:
-Yeah! I can keep you guys safe!
+Zoe: We don't have time for this! There are still monsters crawling all over!
 
-Zoe:
-Thanks.  We can use all the help we can get.
-Here they come...!
+<<char_hide Eden 0.5 false>>
+<<char_hide Aspen 0.5 false>>
+<<char_show Leslie 0.5 false>>
+<<char_show Fuyumi 0.5>>
+<<char_move Aspen FarLeft 1000000000>>
+
+Leslie: I wish I could help. One of those things bit my leg.
+
+Zoe: We'll take care of it. It will be a simple matter.
+Zoe: You just stay alive. I can't lose you.
+
+Leslie: Zoe, I'll be fine. I've been in my fair share of scrapes. You know that.
+<<char_hide Leslie 0.5 false>>
+<<char_show Eden 0.5 false>>
+
+Fuyumi: If you wish, I may assist with defeating these monsters.
+
+
+Eden: Yeah! I can help, too!
+
+<<char_show Lana 0.5>>
+<<char_show Aspen 0.5>>
+Lana: We can all help you, Zoe. We can stop the corruption together!
+
+Zoe: ...
+Zoe: ...Fine.
+
+<<vfx_fg_blackout 1.0>>
+<<char_clear_all>>
+
 ===

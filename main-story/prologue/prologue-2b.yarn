@@ -1,5 +1,6 @@
 title: Start
 ---
+<<set_autodim_time 0.2>>
 <<vfx_fg_blackout 0.1>>
 <<wait_anim>>
 <<bg_load "CityStreetsDay">>
@@ -11,36 +12,44 @@ Lana: What even are these things?
 
 Aspen: C'mon! I can still hear that spellcaster!
 
-<<char_move Aspen OffscreenRight 750.0 smoothLerp>>
+<<char_move Aspen OffscreenRight 750.0 smoothLerp false>>
 <<wait 0.25>>
-<<char_move Lana OffscreenRight 750.0 smoothLerp>>
+<<char_move Lana OffscreenRight 750.0 smoothLerp false>>
 <<wait_anim>>
 <<vfx_fg_blackout 0.5>>
 <<wait_anim>>
-<<char_move Aspen OffscreenLeft 1000000 smoothLerp>>
-<<char_move Lana OffscreenLeft 1000000 smoothLerp>>
+<<char_move Aspen OffscreenLeft 1000000 smoothLerp false>>
+<<char_move Lana OffscreenLeft 1000000 smoothLerp false>>
 <<char_add "Zoe" "Zoe" Right visible>>
 <<bg_switch "TempleBase" 0.1>>
+<<set_autodim_off>>
+<<char_dim Aspen>>
 <<vfx_fg_fadein 1.0>>
 <<wait_anim>>
 
+<<char_undim Zoe 0.2>>
 ???: This is bad, this is very, very bad.
 ???: I need to keep moving.
 
-<<char_move Lana Left 750.0 smoothLerp>>
+
+<<char_move Lana Left 750.0 smoothLerp false>>
 <<wait 0.25>>
-<<char_move Aspen FarLeft 750.0 smoothLerp>>
+<<char_move Aspen FarLeft 750.0 smoothLerp false>>
 <<wait 0.5>>
-
+<<char_dim Zoe 0.2>>
+<<char_undim Lana 0.2>>
 Lana: Hey, you! Are you alright?
-
+<<char_dim Lana 0.2>>
+<<char_undim Zoe 0.2>>
 ???: ...
 ???: I'm fine.
-
+<<char_dim Zoe 0.2>>
+<<char_undim Aspen 0.2>>
 Aspen: What's your name?
-
+<<char_dim Aspen 0.2>>
+<<char_undim Zoe 0.2>>
 ???: Zoe.
-
+<<set_autodim_on>>
 Zoe: Look, it's was nice meeting you, but I have to go.
 
 Aspen: Wait a minute! Do you know anything about these monsters?
@@ -56,11 +65,11 @@ Zoe: This is no place for citizens. Get out of here, both of you.
 <<wait_anim>>
 
 Lana: Ritual?
-<<char_move Lana OffscreenRight 600.0 smoothLerp>>
+<<char_move Lana OffscreenRight 600.0 smoothLerp false>>
 <<wait 0.5>>
 
 Aspen: Citizens?!
-<<char_move Aspen OffscreenRight 600.0 smoothLerp>>
+<<char_move Aspen OffscreenRight 600.0 smoothLerp false>>
 <<wait_anim>>
 //FIX: Get the proper background for this
 <<vfx_fg_blackout 0.5>>
@@ -89,9 +98,9 @@ Lana: What do you mean, ritual? What ritual?
 Lana: What are those things?
 
 Zoe: I don't have time--
-<<char_move Aspen Right 500.0 smoothLerp>>
-<<char_move Zoe Center 500.0 smoothLerp>>
-<<char_move Lana Left 500.0 smoothLerp>>
+<<char_move Aspen Right 500.0 smoothLerp false>>
+<<char_move Zoe Center 500.0 smoothLerp false>>
+<<char_move Lana Left 500.0 smoothLerp false>>
 
 
 Aspen: You listen here! If you know something about these monsters, you need to tell us!
@@ -119,15 +128,14 @@ Aspen: Thank you.
 
 Zoe: Now get out of my way.
 
-<<char_move Zoe OffscreenRight 600.0 smoothLerp>>
+<<char_move Zoe OffscreenRight 600.0 smoothLerp false>>
 <<wait 1.15>>
-<<char_move Lana OffscreenRight 600.0 smoothLerp>>
+<<char_move Lana OffscreenRight 600.0 smoothLerp false>>
 <<char_move Aspen OffscreenRight 600.0 smoothLerp>>
-<<wait_anim>>
 <<char_hide Lana>>
 <<char_hide Aspen>>
-<<char_move Lana Right 1000000>>
-<<char_move Aspen FarRight 100000>>
+<<char_move Lana Right 10000000000>>
+<<char_move Aspen FarRight 100000000>>
 <<vfx_fg_blackout 1.0>>
 <<wait_anim>>
 <<bg_switch "TempleBase" 0.1>>
@@ -151,13 +159,13 @@ Holy Sage: You must... find...
 Holy Sage: Sage Therys...
 Holy Sage: Find the... source... of the tome...
 
-<<char_hide "Holy Sage" 2.0>>
+<<char_hide "Holy Sage" 2.0 false>>
 
 Zoe: Holy Sage!
 Zoe: HOLY SAGE!
 
-<<char_show Lana 1.0>>
-<<char_show Aspen 1.0>>
+<<char_show Lana 1.0 false>>
+<<char_show Aspen 1.0 false>>
 
 Lana: Zoe... I'm sorry, we--
 
@@ -172,10 +180,10 @@ AIIIIEEEEE!!
 Zoe: --!
 Zoe: Leslie!!
 
-<<char_hide Lana 1.0>>
-<<char_hide Aspen 1.0>>
-<<char_hide Zoe 1.0>>
-<<vfx_fg_blackout 1.0>>
+<<char_hide Lana 1.0 false>>
+<<char_hide Aspen 1.0 false>>
+<<char_hide Zoe 1.0 false>>
+<<vfx_fg_blackout 1.0 false>>
 <<wait_anim>>
 <<char_clear_all>>
 ===

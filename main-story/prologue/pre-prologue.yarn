@@ -1,11 +1,12 @@
 title: Start
 ---
-
+<<set_autodim_time 0.2>>
 <<bg_load "CityStreetsNight">>
 <<char_add "Guard 1" "Guard1" Right>>
 <<char_add "Guard 2" "Guard2" Left>>
-<<char_show "Guard 1" 1.0>>
-<<char_show "Guard 2" 1.0>>
+<<char_show "Guard 1" 1.0 false>>
+<<char_show "Guard 2" 1.0 false>>
+<<wait_anim>>
 Guard 1: Did you see the tournament finals?
 Guard 2: No.
 Guard 1: Taggart the Ranger killed Flynn Savoy with a hidden dagger. Brutal stuff.
@@ -22,8 +23,8 @@ Guard 1: Hang on... I-- I think I see something.
 Guard 2: What do you see?
 Guard 1: Something's coming through!!
 Guard 2: Ahh!!
-<<char_hide "Guard 1" 0.5>>
-<<char_hide "Guard 2" 0.5>>
+<<char_hide "Guard 1" 0.5 false>>
+<<char_hide "Guard 2" 0.5 false>>
 <<wait_anim>>
 <<char_clear "Guard 1">>
 <<char_add "Guard 1" "Guard1CarryingBabies" Right>>
@@ -33,16 +34,17 @@ Guard 2: Ahh!!
 <<char_show "Guard 2" 1.0>>
 Guard 2: What the--
 <<char_show "Guard 1" 1.0>>
+<<wait_anim>>
 Guard 1: Two kids.
 Guard 2: What do we do?
 Guard 1: I know someone across the border in Brigand's Drop who would pay well...
 Guard 2: Sell them?! Are you crazy? They're babies!
 Guard 1: Yeah? And who would know? Who would miss them?
 Guard 2: ...
-<<char_hide "Guard 1" 1.0>>
-<<char_hide "Guard 2" 1.0>>
+<<char_hide "Guard 1" 1.0 false>>
+<<char_hide "Guard 2" 1.0 false>>
 <<wait_anim>>
 <<char_clear_all>>
 <<wait 0.5>>
-<<bg_blackout 1.0>>
+<<vfx_fg_blackout 1.0>>
 ===

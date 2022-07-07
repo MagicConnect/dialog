@@ -1,5 +1,6 @@
 title: Start
 ---
+<<set_autodim_time 0.2>>
 //FIX: Swap for art of Temple Exterior
 <<vfx_fg_blackout 0.1>>
 <<wait_anim>>
@@ -9,9 +10,9 @@ title: Start
 <<char_add "Citizen" "Citizen" OffscreenRight Visible>>
 <<vfx_fg_fadein "0.5">>
 <<wait_anim>>
-<<char_move Aspen Center 500.0 smoothLerp>>
+<<char_move Aspen Center 500.0 smoothLerp false>>
 <<wait 0.25>>
-<<char_move Lana Left 500.0 smoothLerp>>
+<<char_move Lana Left 500.0 smoothLerp false>>
 <<wait_anim>>
 
 Lana: This must be the place.
@@ -19,7 +20,6 @@ Aspen: Yeah. But I don't see any--
 Citizen: M-m-monsters! Run for your lives!
 
 <<char_move Citizen OffscreenLeft 1250.0>>
-<<wait_anim>>
 
 //SFX: Thud, crashing
 CRASH!!

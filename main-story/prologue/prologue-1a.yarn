@@ -1,5 +1,6 @@
 title: Start
 ---
+<<set_autodim_time 0.2>>
 <<vfx_fg_blackout 0.0>>
 <<bg_load "LanaBedroom">>
 Chaos.
@@ -16,10 +17,10 @@ Lana: *Gasp* *pant pant pant*
 Lana: Ugh... Another bad dream.
 Lana: What do I have to do to get a good night's rest?
 //SFX: Birds
-Chirp chirp chirp! Chirp chirp chirp!
+Birds: Chirp chirp chirp! Chirp chirp chirp!
 Lana: I wish you guys had woken me up instead of that nightmare...
 //SFX: Birds
-Chirp chirp chirp!
+Birds: Chirp chirp chirp!
 Lana: Yeah, yeah, I know. I've gotta hurry.
 <<char_hide Lana 1.0 true>>
 <<char_clear Lana>>
@@ -52,23 +53,23 @@ Lana: Oh! Excuse me.
 
 <<char_hide Lana 1.0 true>>
 <<char_clear Lana>>
-<<char_show Marianne 0.5>>
-<<char_move Marianne OffscreenLeft 750.0 smoothLerp>>
+<<char_show Marianne 0.5 false>>
+<<char_move Marianne OffscreenLeft 750.0 smoothLerp false>>
 <<wait 0.35>>
-<<char_show Aspen 0.5>>
-<<char_move Aspen OffscreenRight 750.0 smoothLerp>>
+<<char_show Aspen 0.5 false>>
+<<char_move Aspen OffscreenRight 750.0 smoothLerp false>>
 <<wait 0.35>>
-<<char_show Jasmine 0.5>>
-<<char_move Jasmine OffscreenLeft 750.0 smoothLerp>>
+<<char_show Jasmine 0.5 false>>
+<<char_move Jasmine OffscreenLeft 750.0 smoothLerp false>>
 <<wait 0.35>>
-<<char_show Scarlet 0.5>>
-<<char_move Scarlet OffscreenRight 750.0 smoothLerp>>
+<<char_show Scarlet 0.5 false>>
+<<char_move Scarlet OffscreenRight 750.0 smoothLerp false>>
 <<wait 0.35>>
-<<char_show Nalia 0.5>>
-<<char_move Nalia OffscreenLeft 750.0 smoothLerp>>
+<<char_show Nalia 0.5 false>>
+<<char_move Nalia OffscreenLeft 750.0 smoothLerp false>>
 <<wait 0.35>>
-<<char_show Melodie 0.5>>
-<<char_move Melodie OffscreenRight 750.0 smoothLerp>>
+<<char_show Melodie 0.5 false>>
+<<char_move Melodie OffscreenRight 750.0 smoothLerp false>>
 <<wait 0.35>>
 <<wait_anim>>
 <<char_clear_all>>
@@ -80,8 +81,7 @@ Fanfare
 
 <<char_add "King" "KingofSutheria" Center >>
 <<char_show King 1.0 true>>
-
-
+ 
 
 King: The closing ceremony of the 51st annual Citizen Tournament will now commence!
 King: We've had many capable fighters this year from all over the Sutheria. I have been proud to witness the most sportsmanlike Citizen Tournament in years!
@@ -90,7 +90,6 @@ King: Her continued dedication to chivalry and fair play have transformed the da
 
 <<char_move King FarLeft 500.00 smoothLerp>>
 <<wait_anim>>
-<<char_dim King>>
 <<char_add "Valorie" "ValorieSolveig" Center>>
 <<char_show Valorie 1.0 true>>
 <<char_add "Marianne" "MarianneMorenoAlaister" Right>>
@@ -106,8 +105,8 @@ Valorie: Aspen Kagiso!
 //VFX: Screen shaking
 
 Crowd: We love you, Apsen! You're the greatest!
-<<char_move Valorie Left 500.0 smoothLerp>>
-<<char_move King OffscreenLeft 500.00 smoothLerp waitForAnimation>>
+<<char_move Valorie Left 500.0 smoothLerp false>>
+<<char_move King OffscreenLeft 500.00 smoothLerp>>
 <<char_clear King>>
 <<char_show Aspen 1.0 true>>
 
@@ -137,7 +136,7 @@ Valorie: Thank you, Lana.
 <<char_hide Lana 1.0 true>>
 
 Valorie: And now, the winner of the tournament. 
-Valroie: Mistress of the dark arts, healer extraordinaire, and friend of death:
+Valorie: Mistress of the dark arts, healer extraordinaire, and friend of death:
 Valorie: Marianne Moreno!
 
 
@@ -150,16 +149,15 @@ Marianne:...
 Marianne:...
 
 Valorie: Umm... Would you like to say a few words?
-
+<<char_dim Valorie>>
+<<char_undim Marianne>>
 Marianne:...
 Marianne: I would like to thank my Alaister.
 Marianne:...
-
 Alaister: Woof!
-
 <<wait 0.5>>
 <<char_hide Marianne 1.50 true>>
-
+<<set_autodim_on>>
 
 Valorie: Very nice. That officially concludes the 51st annual Citizen Tournament!
 Valorie: Merchandise and autographs from the winning participants can be ordered from your local city offices.
@@ -208,16 +206,15 @@ Aspen: C'mon!
 <<wait 0.5>>
 <<char_show Lana 0.5>>
 <<char_show Aspen 0.5>>
-<<char_move Lana Center 750.0>>
+<<char_move Lana Center 750.0 false>>
 <<wait 0.25>>
-<<char_move Aspen Left 650.0>>
+<<char_move Aspen Left 650.0 false>>
 
 Lana: What's going on?!
-
 Aspen: What in the world-- What is that?!
-Aspen: I've never seen a creature like that before!
+Lana: I've never seen a creature like that before!
 Aspen: Look over there! Those people are being attacked!
-Aspen: We've got to help them!
+Lana: We've got to help them!
 
 <<vfx_fg_blackout 1.0>>
 <<wait_anim>>
