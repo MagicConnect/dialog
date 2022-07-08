@@ -1,0 +1,39 @@
+title: Start
+---
+<<set_autodim_time 0.2>>
+<<vfx_fg_blackout>>
+<<bg_load "TempleBase">> //FIX: Get the proper background for this
+<<char_add "Fuyumi" "FuyumiHana" Left visible>>
+<<char_add "Aspen" "AspenKagiso" Right visible>>
+<<char_add "Lana" "LanaElenore" Center visible>>
+<<vfx_fg_fadein 1.0 true>>
+
+Fuyumi: The way forward is clear now.
+Fuyumi: We should check to ensure the rest of the Temple is safe.
+
+Lana: ...
+Lana: She really left us, didn’t she?
+
+Aspen: You mean Zoe?
+
+Lana: ...
+
+Aspen: If she thinks she can stop this whole thing by finding Therys, then good luck to her. 
+Aspen: But people are dying right now! We don't have the luxury of going on an adventure!!
+
+Lana: ...Aspen?
+
+Aspen: I'm sorry...
+Aspen: It's hard to be positive in the face of all this.
+
+Fuyumi: Zoe is right, though. At some point, we will need to put a stop to this. Or it will never end.
+
+Lana: I think we should go find Therys. After things are under control here, I mean.
+
+Aspen: ...Alright. Let's look around. Make sure everyone is safe.
+
+Lana: Let's go.
+
+<<vfx_fg_blackout 1.0 true>>
+<<char_clear_all>>
+===

@@ -1,0 +1,76 @@
+title: Start
+---
+<<set_autodim_time 0.2>>
+<<vfx_fg_blackout>>
+<<bg_load "TempleBase">>
+<<char_add "Lana" "LanaElenore" OffscreenLeft visible>>
+<<char_add "Eden" "EdenAmsel" Right visible>>
+<<char_add "Aspen" "AspenKagiso" OffscreenLeft visible>>
+<<char_add "Corps 1" "Guard1" OffscreenRight visible>>
+<<char_add "Corps 2" "Guard2" OffscreenRight visible>>
+<<char_add "Melodie" "Melodie" OffscreenRight visible>>
+<<vfx_fg_fadein 1.0 true>>
+<<wait 0.25>>
+<<char_move Lana Center 600 true false>>
+<<char_move Aspen Left 600 true true>>
+
+Lana: It looks like the rest of the Temple is empty.
+Lana: Aspen and I took a quick look and couldn’t find anything.
+Lana: How are the priests?
+
+Eden: T-They could be better. They're really hurt.
+
+Aspen: You’re doing great, Eden. Stay strong.
+
+<<char_hide Eden 0.5 false>>
+<<char_hide Aspen 0.5 false>>
+<<char_hide Lana 0.5 true>>
+<<char_move "Corps 1" Center 600 true false>>
+<<wait 0.2>>
+<<char_move "Corps 2" FarRight 400 true false>>
+<<wait 0.4>>
+<<char_move Melodie Right 500.0 true false>>
+
+Melodie: Get moving! Inside, now!.
+Melodie: We have causalities, so don't waste time. Quick and clean, understand?
+
+Corps 1: Yes, ma’am!
+
+<<char_move "Corps 1" OffscreenLeft 700 true false>>
+<<char_move "Corps 2" OffscreenLeft 700 true true>>
+<<char_clear "Corps 1">>
+<<char_clear "Corps 2">>
+<<char_move Aspen FarLeft 100000000 false false>>
+<<char_move Lana Left 100000000 false false>>
+<<char_move Eden Center 1000000000 false false>>
+
+<<char_show Eden 0.5 false>>
+<<char_show Aspen 0.5 false>>
+<<char_show Lana 0.5 true>>
+
+Melodie: Eden?! What in blazes are you doing here?
+
+Eden: I overslept and was trying to make it to the closing ceremony on time.
+Eden: Then the monsters started showing up. 
+Eden: I've been teamed up with these folks ever since.
+
+Lana: But, the ceremony was over when the monsters attacked.
+
+Eden: I really, really overslept.
+
+Melodie: These are your friends, huh? They good fighters?
+
+Lana: We're professionals.
+
+Aspen: Hah!
+
+Melodie: I hate to ruin the party, but some of those things were following us here. It's only a matter of time before they get in. 
+Melodie: We're not fighters, so we could use some backup. What do you say?
+
+Aspen: Right! Let's hop to it!
+
+Lana: 'Do what to can to make a difference.'
+
+<<vfx_fg_blackout 1.0 true>>
+<<char_clear_all>>
+===

@@ -1,0 +1,81 @@
+title: Start
+---
+//FIX: Get the proper background for this
+<<set_autodim_time 0.2>>
+<<vfx_fg_blackout>>
+<<bg_load "TempleBase">>
+<<char_add "Lana" "LanaElenore" Left visible>>
+<<char_add "Zoe" "Zoe" Center visible>>
+<<char_add "Fuyumi" "FuyumiHana" Right visible>>
+<<char_add "Eden" "EdenAmsel" Right>>
+<<char_add "Aspen" "AspenKagiso" FarRight>>
+<<vfx_fg_fadein 1.0 true>>
+
+Fuyumi: In all of my travels, I’ve never seen beasts like these before. What happened here?
+
+Zoe: A… A ritual.  The Holy Sage led a select few of the Temple in an ancient ritual that was meant to help us commune with the heavens.
+Zoe: Somehow it went wrong.  The ritual was wrong.
+Zoe: It's all my fault. I should have-- I should have stopped it.
+
+Fuyumi: No matter your regrets, you alone could not have fended off these creatures.
+Fuyumi: You must focus on setting things right.
+
+Zoe: I could have made a difference.
+
+Fuyumi: You can make a difference now! Turn your sadness into action.
+Fuyumi: We must stop this situation from deteriorating.
+
+Zoe: …You’re right. Let’s go. We must find Therys. He lives in the Noble Quarter by the River Gardens.
+Zoe: If we take Clairemont Street, we can avoid the center of town.
+
+<<char_hide Fuyumi 1.0 true>>
+<<char_move Fuyumi FarRight 10000000000000>>
+<<char_show Eden 1.0 false>>
+<<char_show Aspen 1.0 true>>
+
+Eden: Y-You’re not leaving, are you?
+Eden: What about the wounded?
+
+Aspen: We can’t just leave these people like this!
+
+Zoe: Then help them. We have a job to do.
+Zoe: Let’s go, Lana.
+
+Lana: ...
+Lana: ...I’m staying, too.
+
+Zoe: What?
+
+Lana: What if more of those things come along? These people need to be protected.
+
+Zoe: If we find Therys, maybe we can stop the corruption at its source!! We can put an end to it!
+
+Lana: I can't leave everyone behind. I'm sorry.
+
+Zoe: ...
+Zoe: ...Fine. I’ll go alone, then.
+
+<<char_move Zoe OffscreenLeft 750.0>>
+<<char_move Eden Center 500.0 true false>>
+<<char_move Aspen Right 500.0 true false>>
+
+Eden: I-It’s not looking good. A lot of these people are badly wounded.
+Eden: All I can do right now is slow the bleeding.  I’m n-not a full medic yet.
+
+Aspen: Do what you can, okay? Fuyumi’s right. We have to make a difference now.
+
+Eden: Right.
+
+<<char_show Fuyumi 1.0>>
+
+Fuyumi: Our turn to make a difference seems to be nearer than we wanted.
+
+Aspen: ...What does that mean?
+
+Fuyumi: It means that more of those things approach from inside the temple.
+Fuyumi: Prepare yourselves…!
+
+<<vfx_fg_blackout 1.0 true>>
+<<char_clear_all>>
+
+===

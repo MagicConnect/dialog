@@ -6,7 +6,7 @@ title: Start
 <<vfx_fg_blackout>>
 <<bg_load "TempleBase">>
 <<char_add "Eden" "EdenAmsel" Left visible>>
-<<char_add "Leslie" "BerylVegha" Center visible>>
+<<char_add "Leslie" "Leslie" Center visible>>
 <<char_add "Fuyumi" "FuyumiHana" Right visible>>
 <<char_add "Zoe" "Zoe" OffscreenLeft visible>>
 <<char_add "Lana" "LanaElenore" Left>>
