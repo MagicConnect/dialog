@@ -4,7 +4,7 @@
       "YarnName": "char_hide",
       "DefinitionName": "FadeOutCharacter_Handler",
       "Documentation": "Animates fading a character out over time, until they are completely invisible.",
-      "Signature": "char_hide (character, animationTime = 0.0f, waitForAnimation = false)",
+      "Signature": "char_hide character animationTime waitForAnimation",
       "Parameters": [
         {
           "Name": "character",
@@ -33,7 +33,7 @@
       "YarnName": "char_show",
       "DefinitionName": "FadeInCharacter_Handler",
       "Documentation": "Animates fading a character in over time, until they are completely visible. Works on characters who were invisible when they were spawned in.",
-      "Signature": "char_show (character, animationTime = 0.0f, waitForAnimation = false)",
+      "Signature": "char_show character animationTime waitForAnimation",
       "Parameters": [
         {
           "Name": "character",
@@ -62,7 +62,7 @@
       "YarnName": "char_dim",
       "DefinitionName": "DimCharacter_Handler",
       "Documentation": "Animates graying out a character over time. Good for showing a character isn't the current focus of the conversation.",
-      "Signature": "char_dim (character, animationTime = 0.0f, waitForAnimation = false)",
+      "Signature": "char_dim character animationTime waitForAnimation",
       "Parameters": [
         {
           "Name": "character",
@@ -91,7 +91,7 @@
       "YarnName": "char_undim",
       "DefinitionName": "UndimCharacter_Handler",
       "Documentation": "Animates a character changing from grayed out back to their default sprite. Good for showing the character is the current focus of the conversation.",
-      "Signature": "char_undim (character, animationTime = 0.0f, waitForAnimation = false)",
+      "Signature": "char_undim character animationTime waitForAnimation",
       "Parameters": [
         {
           "Name": "character",
@@ -120,7 +120,7 @@
       "YarnName": "char_move",
       "DefinitionName": "MoveCharacterPositionSpeed_Handler",
       "Documentation": "Animates moving a character to a given stage position using a speed in units per second.",
-      "Signature": "char_move (character, stagePosition, speed, smoothLerp = true, waitForAnimation = false)",
+      "Signature": "char_move character stagePosition speed smoothLerp waitForAnimation",
       "Parameters": [
         {
           "Name": "character",
@@ -161,7 +161,7 @@
       "YarnName": "char_move_time",
       "DefinitionName": "MoveCharacter_Handler",
       "Documentation": "Animates moving a character to a given stage position using a fixed animation time.",
-      "Signature": "char_move_time (character, stagePosition, animationTime = 0.0f, smoothLerp = true, waitForAnimation = false)",
+      "Signature": "char_move_time character stagePosition animationTime smoothLerp waitForAnimation",
       "Parameters": [
         {
           "Name": "character",
@@ -203,7 +203,7 @@
       "YarnName": "char_clear",
       "DefinitionName": "ClearCharacter",
       "Documentation": "Deletes a character object from the scene.",
-      "Signature": "char_clear (character)",
+      "Signature": "char_clear character",
       "Parameters": [
         {
           "Name": "character",
@@ -218,7 +218,7 @@
       "YarnName": "vfx_char_clear",
       "DefinitionName": "ClearAllVfx",
       "Documentation": "Deletes all visual effects from a character.",
-      "Signature": "vfx_char_clear (character)",
+      "Signature": "vfx_char_clear character",
       "Parameters": [
         {
           "Name": "character",
@@ -233,10 +233,10 @@
       "YarnName": "vfx_clear",
       "DefinitionName": "ClearEffect",
       "Documentation": "Deletes a visual effect object from the scene.",
-      "Signature": "vfx_clear (effect)",
+      "Signature": "vfx_clear effect",
       "Parameters": [
         {
-          "Name": "character",
+          "Name": "effect",
           "Type": "String",
           "Documentation": "The effect that will be removed from the scene. Only the first effect with the given name will be removed, and all effects are given the same default name if no custom name is given at creation. Make sure the effect you want to remove is given a custom name when it was created or else this command may not work correctly.",
           "IsParamsArray": false
@@ -248,7 +248,7 @@
       "YarnName": "char_dim_alternate",
       "DefinitionName": "SwitchDimmedCharacter",
       "Documentation": "Switches which of two characters is dimmed. Useful for cutting down the number of char_dim and char_undim commands when the autodim system is disabled.",
-      "Signature": "char_dim_alternate (firstCharacter, secondCharacter, animationTime = 0.0f, waitForAnimation = false, undimFirstCharacter = false, undimSecondCharacter = false)",
+      "Signature": "char_dim_alternate firstCharacter secondCharacter animationTime waitForAnimation undimFirstCharacter undimSecondCharacter",
       "Parameters": [
         {
           "Name": "firstCharacter",
@@ -297,7 +297,7 @@
       "YarnName": "bg_load",
       "DefinitionName": "SetBackgroundImage",
       "Documentation": "Immediately sets the background image to the named sprite. Best used at the start of the script when the starting image needs to be set.",
-      "Signature": "bg_load (imageName)",
+      "Signature": "bg_load imageName",
       "Parameters": [
         {
           "Name": "imageName",
@@ -312,7 +312,7 @@
       "YarnName": "bg_switch",
       "DefinitionName": "SwitchBackgroundImage_Handler",
       "Documentation": "Animates switching from the current background image to a new one.",
-      "Signature": "bg_switch (imageName, animationTime = 0.0f, waitForAnimation = false)",
+      "Signature": "bg_switch imageName animationTime waitForAnimation",
       "Parameters": [
         {
           "Name": "imageName",
@@ -341,7 +341,7 @@
       "YarnName": "vfx_bg_blackout",
       "DefinitionName": "AddBackgroundBlackoutVfx",
       "Documentation": "Creates a blackout effect on the background effect layer, which fades to black over time. Background effects only affect the background image. Blackout objects are automatically deleted when a fadein effect is used on the same layer.",
-      "Signature": "vfx_bg_blackout (animationTime = 0.0f, waitForAnimation = false, name = 'vfx_bg_blackout')",
+      "Signature": "vfx_bg_blackout animationTime waitForAnimation name",
       "Parameters": [
         {
           "Name": "animationTime",
@@ -371,7 +371,7 @@
       "YarnName": "vfx_bg_fadein",
       "DefinitionName": "AddBackgroundFadeinVfx",
       "Documentation": "Creates a fadein effect on the background effect layer, which fades from black over time. Background effects only affect the background image. Fadein effects are automatically deleted after completing their animation, since they are invisible.",
-      "Signature": "vfx_bg_fadein (animationTime = 0.0f, waitForAnimation = false, name = 'vfx_bg_fadein')",
+      "Signature": "vfx_bg_fadein animationTime waitForAnimation name",
       "Parameters": [
         {
           "Name": "animationTime",
@@ -401,7 +401,7 @@
       "YarnName": "vfx_fg_blackout",
       "DefinitionName": "AddForegroundBlackoutVfx",
       "Documentation": "Creates a blackout effect on the foreground effect layer, which fades to black over time. Foreground effects only affect the background image and the characters. Blackout objects are automatically deleted when a fadein effect is used on the same layer.",
-      "Signature": "vfx_fg_blackout (animationTime = 0.0f, waitForAnimation = false, name = 'vfx_fg_blackout')",
+      "Signature": "vfx_fg_blackout animationTime waitForAnimation name",
       "Parameters": [
         {
           "Name": "animationTime",
@@ -431,7 +431,7 @@
       "YarnName": "vfx_fg_fadein",
       "DefinitionName": "AddForegroundFadeinVfx",
       "Documentation": "Creates a fadein effect on the foreground effect layer, which fades from black over time. Foreground effects only affect the background image and characters. Fadein effects are automatically deleted after completing their animation, since they are invisible.",
-      "Signature": "vfx_fg_fadein (animationTime = 0.0f, waitForAnimation = false, name = 'vfx_fg_fadein')",
+      "Signature": "vfx_fg_fadein animationTime waitForAnimation name",
       "Parameters": [
         {
           "Name": "animationTime",
@@ -461,7 +461,7 @@
       "YarnName": "vfx_scr_blackout",
       "DefinitionName": "AddScreenBlackoutVfx",
       "Documentation": "Creates a blackout effect on the screen effect layer, which fades to black over time. Screen effects affect the entire scene, including the dialogue window, so be careful when using this. Blackout objects are automatically deleted when a fadein effect is used on the same layer.",
-      "Signature": "vfx_scr_blackout (animationTime = 0.0f, waitForAnimation = false, name = 'vfx_scr_blackout')",
+      "Signature": "vfx_scr_blackout animationTime waitForAnimation name",
       "Parameters": [
         {
           "Name": "animationTime",
@@ -491,7 +491,7 @@
       "YarnName": "vfx_scr_fadein",
       "DefinitionName": "AddScreenFadeinVfx",
       "Documentation": "Creates a fadein effect on the screen effect layer, which fades from black over time. Screen effects affect the entire scene, including the dialogue window, so be careful when using this. Fadein effects are automatically deleted after completing their animation, since they are invisible.",
-      "Signature": "vfx_scr_fadein (animationTime = 0.0f, waitForAnimation = false, name = 'vfx_scr_fadein')",
+      "Signature": "vfx_scr_fadein animationTime waitForAnimation name",
       "Parameters": [
         {
           "Name": "animationTime",
@@ -549,7 +549,7 @@
       "YarnName": "vfx_char_speedline",
       "DefinitionName": "AddCharacterSpeedlineVfx",
       "Documentation": "Adds a speedline visual effect to a chosen character.",
-      "Signature": "vfx_char_speedline (character, duration = -1.0f, color = '#000000FF', radius = 100.0f, name = 'vfx_char_speedline')",
+      "Signature": "vfx_char_speedline character duration color radius name",
       "Parameters": [
         {
           "Name": "character",
@@ -568,7 +568,7 @@
           "Name": "color",
           "Type": "String",
           "DefaultValue": "#000000FF",
-          "Documentation": "What color the lines of the speedline effect should be. The default color is black, like in most comics or anime. The value given is a hexadecimal in the html color format, and the # is required.",
+          "Documentation": "The color the lines of the speedline effect should be. The default color is black, like in most comics or anime. The value given is a hexadecimal in the html color format; that means for a color represented by red, green, blue, and alpha, the pattern you should use is #RRGGBBAA.",
           "IsParamsArray": false
         },
         {
@@ -592,7 +592,7 @@
       "YarnName": "char_add",
       "DefinitionName": "AddCharacter",
       "Documentation": "Adds a new named character object to the scene.",
-      "Signature": "char_add (objectName, characterName, position = null, visible = false)",
+      "Signature": "char_add objectName characterName position visible",
       "Parameters": [
         {
           "Name": "objectName",
@@ -641,7 +641,7 @@
       "YarnName": "set_autodim_time",
       "DefinitionName": "SetAutoDimAnimationTime",
       "Documentation": "Sets the default animation time for the autodimming system.",
-      "Signature": "set_autodim_time (time)",
+      "Signature": "set_autodim_time time",
       "Parameters": [
         {
           "Name": "time",
