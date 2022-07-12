@@ -1,99 +1,683 @@
 {
   "Commands": [
     {
-      "YarnName": "change_background_image",
-      "DefinitionName": "change_background_image",
-      "Documentation": "Change the background image for the current cutscene.",
-      "Signature": "change_background_image NewBackgroundImage",
+      "YarnName": "char_hide",
+      "DefinitionName": "FadeOutCharacter_Handler",
+      "Documentation": "Animates fading a character out over time, until they are completely invisible.",
+      "Signature": "char_hide character animationTime waitForAnimation",
       "Parameters": [
         {
-          "Name": "NewBackgroundImage",
+          "Name": "character",
           "Type": "String",
-          "Documentation": "You can specify any valid background image here.",
-          "IsParamsArray": false
-        }
-      ],
-      "Language": "csharp"
-    },
-    {
-      "YarnName": "fade_in_character",
-      "DefinitionName": "fade_in_character",
-      "Documentation": "Fade in a character.",
-      "Signature": "fade_in_character CharacterName",
-      "Parameters": [
-        {
-          "Name": "CharacterName",
-          "Type": "String",
-          "Documentation": "You can specify any valid character image here.",
-          "IsParamsArray": false
-        }
-      ],
-      "Language": "csharp"
-    },
-    {
-      "YarnName": "fade_out_character",
-      "DefinitionName": "fade_out_character",
-      "Documentation": "Fade out a character.",
-      "Signature": "fade_out_character CharacterName",
-      "Parameters": [
-        {
-          "Name": "CharacterName",
-          "Type": "String",
-          "Documentation": "You can specify any valid character image here.",
-          "IsParamsArray": false
-        }
-      ],
-      "Language": "csharp"
-    },
-    {
-      "YarnName": "show_character",
-      "DefinitionName": "show_character",
-      "Documentation": "Show a character.",
-      "Signature": "show_character CharacterName",
-      "Parameters": [
-        {
-          "Name": "CharacterName",
-          "Type": "String",
-          "Documentation": "You can specify any valid character image here.",
-          "IsParamsArray": false
-        }
-      ],
-      "Language": "csharp"
-    },
-    {
-      "YarnName": "hide_character",
-      "DefinitionName": "hide_character",
-      "Documentation": "Hide a character.",
-      "Signature": "hide_character CharacterName",
-      "Parameters": [
-        {
-          "Name": "CharacterName",
-          "Type": "String",
-          "Documentation": "You can specify any valid character image here.",
-          "IsParamsArray": false
-        }
-      ],
-      "Language": "csharp"
-    },
-    {
-      "YarnName": "move_character",
-      "DefinitionName": "move_character",
-      "Documentation": "Move a character.",
-      "Signature": "move_character CharacterName Location",
-      "Parameters": [
-        {
-          "Name": "CharacterName",
-          "Type": "String",
-          "Documentation": "You can specify any valid character image here.",
+          "Documentation": "The character object to be faded out.",
           "IsParamsArray": false
         },
         {
-          "Name": "Location",
-          "Type": "String",
-          "Documentation": "You can specify any location here (FarLeft, Left, Center, Right, FarRight).",
+          "Name": "animationTime",
+          "Type": "float",
+          "DefaultValue": "0.0",
+          "Documentation": "The time in seconds it takes for the animation to run.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "waitForAnimation",
+          "Type": "boolean",
+          "DefaultValue": "false",
+          "Documentation": "Whether or not the cutscene should wait for the animation to complete before continuing to the next line or command.",
           "IsParamsArray": false
         }
       ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "char_show",
+      "DefinitionName": "FadeInCharacter_Handler",
+      "Documentation": "Animates fading a character in over time, until they are completely visible. Works on characters who were invisible when they were spawned in.",
+      "Signature": "char_show character animationTime waitForAnimation",
+      "Parameters": [
+        {
+          "Name": "character",
+          "Type": "String",
+          "Documentation": "The character object to be faded in.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "animationTime",
+          "Type": "float",
+          "DefaultValue": "0.0",
+          "Documentation": "The time in seconds it takes for the animation to run.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "waitForAnimation",
+          "Type": "boolean",
+          "DefaultValue": "false",
+          "Documentation": "Whether or not the cutscene should wait for the animation to complete before continuing to the next line or command.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "char_dim",
+      "DefinitionName": "DimCharacter_Handler",
+      "Documentation": "Animates graying out a character over time. Good for showing a character isn't the current focus of the conversation.",
+      "Signature": "char_dim character animationTime waitForAnimation",
+      "Parameters": [
+        {
+          "Name": "character",
+          "Type": "String",
+          "Documentation": "The character object to be dimed.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "animationTime",
+          "Type": "float",
+          "DefaultValue": "0.0",
+          "Documentation": "The time in seconds it takes for the animation to run.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "waitForAnimation",
+          "Type": "boolean",
+          "DefaultValue": "false",
+          "Documentation": "Whether or not the cutscene should wait for the animation to complete before continuing to the next line or command.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "char_undim",
+      "DefinitionName": "UndimCharacter_Handler",
+      "Documentation": "Animates a character changing from grayed out back to their default sprite. Good for showing the character is the current focus of the conversation.",
+      "Signature": "char_undim character animationTime waitForAnimation",
+      "Parameters": [
+        {
+          "Name": "character",
+          "Type": "String",
+          "Documentation": "The character object to be undimmed.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "animationTime",
+          "Type": "float",
+          "DefaultValue": "0.0",
+          "Documentation": "The time in seconds it takes for the animation to run.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "waitForAnimation",
+          "Type": "boolean",
+          "DefaultValue": "false",
+          "Documentation": "Whether or not the cutscene should wait for the animation to complete before continuing to the next line or command.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "char_move",
+      "DefinitionName": "MoveCharacterPositionSpeed_Handler",
+      "Documentation": "Animates moving a character to a given stage position using a speed in units per second.",
+      "Signature": "char_move character stagePosition speed smoothLerp waitForAnimation",
+      "Parameters": [
+        {
+          "Name": "character",
+          "Type": "String",
+          "Documentation": "The character object to be moved.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "stagePosition",
+          "Type": "String",
+          "Documentation": "The stage position to move the character to. The available stage positions are: OffscreenLeft, FarLeft, Left, Center, Right, FarRight, and OffscreenRight.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "speed",
+          "Type": "float",
+          "Documentation": "How many 'units' per second the character should move at. Units are roughly equivalent to a pixel on the screen.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "smoothLerp",
+          "Type": "boolean",
+          "DefaultValue": "true",
+          "Documentation": "Whether or not the move animation should be 'smoothed out', gradually speeding up at the start and gradually slowing down at the end. Makes the animation appear more natural, like how a person moves. The animation time is unaffected.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "waitForAnimation",
+          "Type": "boolean",
+          "DefaultValue": "false",
+          "Documentation": "Whether or not the cutscene should wait for the animation to complete before continuing to the next line or command.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "char_move_time",
+      "DefinitionName": "MoveCharacter_Handler",
+      "Documentation": "Animates moving a character to a given stage position using a fixed animation time.",
+      "Signature": "char_move_time character stagePosition animationTime smoothLerp waitForAnimation",
+      "Parameters": [
+        {
+          "Name": "character",
+          "Type": "String",
+          "Documentation": "The character object to be moved.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "stagePosition",
+          "Type": "String",
+          "Documentation": "The stage position to move the character to. The available stage positions are: OffscreenLeft, FarLeft, Left, Center, Right, FarRight, and OffscreenRight.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "animationTime",
+          "Type": "float",
+          "DefaultValue": "0.0",
+          "Documentation": "The time in seconds it takes for the animation to run.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "smoothLerp",
+          "Type": "boolean",
+          "DefaultValue": "true",
+          "Documentation": "Whether or not the move animation should be 'smoothed out', gradually speeding up at the start and gradually slowing down at the end. Makes the animation appear more natural, like how a person moves. The animation time is unaffected.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "waitForAnimation",
+          "Type": "boolean",
+          "DefaultValue": "false",
+          "Documentation": "Whether or not the cutscene should wait for the animation to complete before continuing to the next line or command.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "char_clear",
+      "DefinitionName": "ClearCharacter",
+      "Documentation": "Deletes a character object from the scene.",
+      "Signature": "char_clear character",
+      "Parameters": [
+        {
+          "Name": "character",
+          "Type": "String",
+          "Documentation": "The character to be deleted from the scene.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "vfx_char_clear",
+      "DefinitionName": "ClearAllVfx",
+      "Documentation": "Deletes all visual effects from a character.",
+      "Signature": "vfx_char_clear character",
+      "Parameters": [
+        {
+          "Name": "character",
+          "Type": "String",
+          "Documentation": "The character that will have all their visual effects cleared.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "vfx_clear",
+      "DefinitionName": "ClearEffect",
+      "Documentation": "Deletes a visual effect object from the scene.",
+      "Signature": "vfx_clear effect",
+      "Parameters": [
+        {
+          "Name": "effect",
+          "Type": "String",
+          "Documentation": "The effect that will be removed from the scene. Only the first effect with the given name will be removed, and all effects are given the same default name if no custom name is given at creation. Make sure the effect you want to remove is given a custom name when it was created or else this command may not work correctly.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "char_dim_alternate",
+      "DefinitionName": "SwitchDimmedCharacter",
+      "Documentation": "Switches which of two characters is dimmed. Useful for cutting down the number of char_dim and char_undim commands when the autodim system is disabled.",
+      "Signature": "char_dim_alternate firstCharacter secondCharacter animationTime waitForAnimation undimFirstCharacter undimSecondCharacter",
+      "Parameters": [
+        {
+          "Name": "firstCharacter",
+          "Type": "String",
+          "Documentation": "The first of two characters to be switched between.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "secondCharacter",
+          "Type": "String",
+          "Documentation": "The second of the two characters to be switched between.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "animationTime",
+          "Type": "float",
+          "DefaultValue": "0.0",
+          "Documentation": "The time in seconds for the dimming and undimming animations to complete.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "waitForAnimation",
+          "Type": "boolean",
+          "DefaultValue": "false",
+          "Documentation": "Whether or not the cutscene should wait for the animation to complete before continuing to the next line or command.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "undimFirstCharacter",
+          "Type": "String",
+          "DefaultValue": "false",
+          "Documentation": "If true this forces the first character to be undimmed. Useful for setting the first character to be undimmed without needing an extra char_dim or char_undim command.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "undimSecondCharacter",
+          "Type": "String",
+          "DefaultValue": "false",
+          "Documentation": "If thrue this forces the second character to be undimmed. Useful for setting the first character to be undimmed without needing an extra char_dim or char_undim command.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "bg_load",
+      "DefinitionName": "SetBackgroundImage",
+      "Documentation": "Immediately sets the background image to the named sprite. Best used at the start of the script when the starting image needs to be set.",
+      "Signature": "bg_load imageName",
+      "Parameters": [
+        {
+          "Name": "imageName",
+          "Type": "String",
+          "Documentation": "The name of the background image to be loaded.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "bg_switch",
+      "DefinitionName": "SwitchBackgroundImage_Handler",
+      "Documentation": "Animates switching from the current background image to a new one.",
+      "Signature": "bg_switch imageName animationTime waitForAnimation",
+      "Parameters": [
+        {
+          "Name": "imageName",
+          "Type": "String",
+          "Documentation": "The name of the background image to be switched to.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "animationTime",
+          "Type": "float",
+          "DefaultValue": "0.0",
+          "Documentation": "The time in seconds for the animation to run.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "waitForAnimation",
+          "Type": "boolean",
+          "DefaultValue": "false",
+          "Documentation": "Whether or not the cutscene should wait for the animation to complete before continuing to the next line or command.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "vfx_bg_blackout",
+      "DefinitionName": "AddBackgroundBlackoutVfx",
+      "Documentation": "Creates a blackout effect on the background effect layer, which fades to black over time. Background effects only affect the background image. Blackout objects are automatically deleted when a fadein effect is used on the same layer.",
+      "Signature": "vfx_bg_blackout animationTime waitForAnimation name",
+      "Parameters": [
+        {
+          "Name": "animationTime",
+          "Type": "float",
+          "DefaultValue": "0.0",
+          "Documentation": "The time in seconds for the animation to run.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "waitForAnimation",
+          "Type": "boolean",
+          "DefaultValue": "false",
+          "Documentation": "Whether or not the cutscene should wait for the animation to complete before continuing to the next line or command.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "name",
+          "Type": "String",
+          "DefaultValue": "vfx_bg_blackout",
+          "Documentation": "The name that the effect object should have. Used for identifying the effect in other commands (example: vfx_clear).",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "vfx_bg_fadein",
+      "DefinitionName": "AddBackgroundFadeinVfx",
+      "Documentation": "Creates a fadein effect on the background effect layer, which fades from black over time. Background effects only affect the background image. Fadein effects are automatically deleted after completing their animation, since they are invisible.",
+      "Signature": "vfx_bg_fadein animationTime waitForAnimation name",
+      "Parameters": [
+        {
+          "Name": "animationTime",
+          "Type": "float",
+          "DefaultValue": "0.0",
+          "Documentation": "The time in seconds for the animation to run.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "waitForAnimation",
+          "Type": "boolean",
+          "DefaultValue": "false",
+          "Documentation": "Whether or not the cutscene should wait for the animation to complete before continuing to the next line or command.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "name",
+          "Type": "String",
+          "DefaultValue": "vfx_bg_fadein",
+          "Documentation": "The name that the effect object should have. Used for identifying the effect in other commands (example: vfx_clear).",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "vfx_fg_blackout",
+      "DefinitionName": "AddForegroundBlackoutVfx",
+      "Documentation": "Creates a blackout effect on the foreground effect layer, which fades to black over time. Foreground effects only affect the background image and the characters. Blackout objects are automatically deleted when a fadein effect is used on the same layer.",
+      "Signature": "vfx_fg_blackout animationTime waitForAnimation name",
+      "Parameters": [
+        {
+          "Name": "animationTime",
+          "Type": "float",
+          "DefaultValue": "0.0",
+          "Documentation": "The time in seconds for the animation to run.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "waitForAnimation",
+          "Type": "boolean",
+          "DefaultValue": "false",
+          "Documentation": "Whether or not the cutscene should wait for the animation to complete before continuing to the next line or command.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "name",
+          "Type": "String",
+          "DefaultValue": "vfx_fg_blackout",
+          "Documentation": "The name that the effect object should have. Used for identifying the effect in other commands (example: vfx_clear).",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "vfx_fg_fadein",
+      "DefinitionName": "AddForegroundFadeinVfx",
+      "Documentation": "Creates a fadein effect on the foreground effect layer, which fades from black over time. Foreground effects only affect the background image and characters. Fadein effects are automatically deleted after completing their animation, since they are invisible.",
+      "Signature": "vfx_fg_fadein animationTime waitForAnimation name",
+      "Parameters": [
+        {
+          "Name": "animationTime",
+          "Type": "float",
+          "DefaultValue": "0.0",
+          "Documentation": "The time in seconds for the animation to run.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "waitForAnimation",
+          "Type": "boolean",
+          "DefaultValue": "false",
+          "Documentation": "Whether or not the cutscene should wait for the animation to complete before continuing to the next line or command.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "name",
+          "Type": "String",
+          "DefaultValue": "vfx_fg_fadein",
+          "Documentation": "The name that the effect object should have. Used for identifying the effect in other commands (example: vfx_clear).",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "vfx_scr_blackout",
+      "DefinitionName": "AddScreenBlackoutVfx",
+      "Documentation": "Creates a blackout effect on the screen effect layer, which fades to black over time. Screen effects affect the entire scene, including the dialogue window, so be careful when using this. Blackout objects are automatically deleted when a fadein effect is used on the same layer.",
+      "Signature": "vfx_scr_blackout animationTime waitForAnimation name",
+      "Parameters": [
+        {
+          "Name": "animationTime",
+          "Type": "float",
+          "DefaultValue": "0.0",
+          "Documentation": "The time in seconds for the animation to run.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "waitForAnimation",
+          "Type": "boolean",
+          "DefaultValue": "false",
+          "Documentation": "Whether or not the cutscene should wait for the animation to complete before continuing to the next line or command.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "name",
+          "Type": "String",
+          "DefaultValue": "vfx_scr_blackout",
+          "Documentation": "The name that the effect object should have. Used for identifying the effect in other commands (example: vfx_clear).",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "vfx_scr_fadein",
+      "DefinitionName": "AddScreenFadeinVfx",
+      "Documentation": "Creates a fadein effect on the screen effect layer, which fades from black over time. Screen effects affect the entire scene, including the dialogue window, so be careful when using this. Fadein effects are automatically deleted after completing their animation, since they are invisible.",
+      "Signature": "vfx_scr_fadein animationTime waitForAnimation name",
+      "Parameters": [
+        {
+          "Name": "animationTime",
+          "Type": "float",
+          "DefaultValue": "0.0",
+          "Documentation": "The time in seconds for the animation to run.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "waitForAnimation",
+          "Type": "boolean",
+          "DefaultValue": "false",
+          "Documentation": "Whether or not the cutscene should wait for the animation to complete before continuing to the next line or command.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "name",
+          "Type": "String",
+          "DefaultValue": "vfx_scr_fadein",
+          "Documentation": "The name that the effect object should have. Used for identifying the effect in other commands (example: vfx_clear).",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "vfx_bg_clear_all",
+      "DefinitionName": "ClearAllBackgroundVfx",
+      "Documentation": "Deletes all visual effects on the background layer.",
+      "Signature": "vfx_bg_clear_all",
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "vfx_fg_clear_all",
+      "DefinitionName": "ClearAllForegroundVfx",
+      "Documentation": "Deletes all visual effects on the foreground layer.",
+      "Signature": "vfx_fg_clear_all",
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "vfx_scr_clear_all",
+      "DefinitionName": "ClearAllScreenVfx",
+      "Documentation": "Deletes all visual effects on the screen layer.",
+      "Signature": "vfx_scr_clear_all",
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "vfx_char_clear_all",
+      "DefinitionName": "ClearAllCharacterVfx",
+      "Documentation": "Deletes all visual effects on all characters in the scene.",
+      "Signature": "vfx_char_clear_all",
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "vfx_char_speedline",
+      "DefinitionName": "AddCharacterSpeedlineVfx",
+      "Documentation": "Adds a speedline visual effect to a chosen character.",
+      "Signature": "vfx_char_speedline character duration color radius name",
+      "Parameters": [
+        {
+          "Name": "character",
+          "Type": "String",
+          "Documentation": "The name of the character the speedline effect will be attached to.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "duration",
+          "Type": "float",
+          "DefaultValue": "-1.0",
+          "Documentation": "How long the visual effect should last in the scene. At the end of the duration the effect is deleted. The default value of -1 means the effect will be persistent, and will stay until you clear it manually.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "color",
+          "Type": "String",
+          "DefaultValue": "#000000FF",
+          "Documentation": "The color the lines of the speedline effect should be. The default color is black, like in most comics or anime. The value given is a hexadecimal in the html color format; that means for a color represented by red, green, blue, and alpha, the pattern you should use is #RRGGBBAA.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "radius",
+          "Type": "float",
+          "DefaultValue": "100.0",
+          "Documentation": "The radius of the speedline effect. Roughly determines how far from the effect's center the individual speedlines will be drawn.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "name",
+          "Type": "String",
+          "DefaultValue": "vfx_char_speedline",
+          "Documentation": "The name that the effect object should have. Used for identifying the effect in other commands (example: vfx_clear).",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "char_add",
+      "DefinitionName": "AddCharacter",
+      "Documentation": "Adds a new named character object to the scene.",
+      "Signature": "char_add objectName characterName position visible",
+      "Parameters": [
+        {
+          "Name": "objectName",
+          "Type": "String",
+          "Documentation": "The name of the character object you create. Used for referencing this object in later commands (example: <<char_add 'Lana' ...>> for <<char_move Lana ...>>).",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "characterName",
+          "Type": "String",
+          "Documentation": "The name of the sprite you want to use for the character. Character and npc sprites are supported.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "position",
+          "Type": "String",
+          "DefaultValue": "null",
+          "Documentation": "The stage position that the character will be spawned at. While this argument can be null, the character's position will eventually have to be set in order to display correctly so you might as well set it here if there's no good reason not to.",
+          "IsParamsArray": false
+        },
+        {
+          "Name": "visible",
+          "Type": "boolean",
+          "DefaultValue": "false",
+          "Documentation": "If true then the character will be visible when spawned. If false the character will be invisible, and a char_show command will need to be used to make them visible.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "char_clear_all",
+      "DefinitionName": "RemoveAllCharacters",
+      "Documentation": "Removes all created characters from the scene.",
+      "Signature": "char_clear_all",
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "wait_anim",
+      "DefinitionName": "WaitForAllAnimations",
+      "Documentation": "Tells the Yarn Spinner system to wait until all ongoing animations are complete before continuing to the next command or line. ",
+      "Signature": "wait_anim",
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "set_autodim_time",
+      "DefinitionName": "SetAutoDimAnimationTime",
+      "Documentation": "Sets the default animation time for the autodimming system.",
+      "Signature": "set_autodim_time time",
+      "Parameters": [
+        {
+          "Name": "time",
+          "Type": "float",
+          "Documentation": "The time in seconds for the dimming and undimming animations to complete.",
+          "IsParamsArray": false
+        }
+      ],
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "set_autodim_on",
+      "DefinitionName": "EnableAutodimSystem",
+      "Documentation": "Enables the automatic dimming and undimming system. While the system is active, any character with the same name as the speaker will be undimmed, and all other characters will be dimmed.",
+      "Signature": "set_autodim_on",
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "set_autodim_off",
+      "DefinitionName": "DisableAutodimSystem",
+      "Documentation": "Disables the automatic dimming and undimming system. Characters will have to be dimmed/undimmed manually with the char_dim, char_undim, and char_dim_alternate commands.",
+      "Signature": "set_autodim_off",
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "set_dim_default_on",
+      "DefinitionName": "EnableDefaultDimTime",
+      "Documentation": "While the autodimming system is off, turning this on will allow the char_dim, char_undim, and char_dim_alternate commands to use the default autodimming animation time. While on any value you pass in for the animationTime argument will be ignored.",
+      "Signature": "set_dim_default_on",
+      "Language": "csharp"
+    },
+    {
+      "YarnName": "set_dim_default_off",
+      "DefinitionName": "DisableDefaultDimTime",
+      "Documentation": "Sets the char_dim, char_undim, and char_dim_alternate commands back to their default behavior, ignoring the autodim animation time.",
+      "Signature": "set_dim_default_off",
       "Language": "csharp"
     }
   ]
