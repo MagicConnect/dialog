@@ -1,0 +1,504 @@
+title:Start
+---
+<<set_autodim_off>>
+<<declare $leftChar = "" as string>>
+<<declare $rightChar = "" as string>>
+<<declare $leftWeapon = 0 as number>>
+<<declare $rightWeapon = 0 as number>>
+<<declare $junkWeapon = 4 as number>>
+
+<<bg_load "Barracks">>
+<<vfx_fg_fadein>>
+
+Let's have a sample scene with two random characters.
+First, we'll pick the left character.
+
+<<set $leftCharRoll = dice(3)>>
+
+<<if $leftCharRoll == 1>>
+    <<set $leftChar = "Lana">>
+    <<set $leftWeapon = 1>> //Axe
+    <<char_add "LeftCh" "LanaElenore" Left true>>
+<<elseif $leftCharRoll == 2>>
+    <<set $leftChar = "Aspen">>
+    <<set $leftWeapon = 2>> //Bow
+    <<char_add "LeftCh" "AspenKagiso" Left true>>
+<<elseif $leftCharRoll == 3>>
+    <<set $leftChar = "Eden">>
+    <<set $leftWeapon = 2>> //Bow
+    <<char_add "LeftCh" "EdenAmsel" Left true>>
+<<endif>>
+
+You rolled {$leftChar}.
+
+Now for the person on the right.
+<<set $rightCharRoll = dice(3)>>
+
+<<if $rightCharRoll == 1>>
+    <<set $rightChar = "Lana">>
+    <<set $rightWeapon = 1>> //Axe
+    <<char_add "RightCh" "LanaElenore" Right true>>
+<<elseif $rightCharRoll == 2>>
+    <<set $rightChar = "Aspen">>
+    <<set $rightWeapon = 2>> //Bow
+    <<char_add "RightCh" "AspenKagiso" Right true>>
+<<elseif $rightCharRoll == 3>>
+    <<set $rightChar = "Eden">>
+    <<set $rightWeapon = 2>> //Bow
+    <<char_add "RightCh" "EdenAmsel" Right true>>
+<<endif>>
+
+You rolled {$rightChar}.
+
+Let's not keep you waiting any longer, shall we?
+It's time for... the conversation!
+But first we need to generate some internal variables...
+
+<<set $convoRoll = dice(3)>>
+//1 ==> Health
+//2 ==> Item
+//3 ==> Introduction
+
+<<set $leftCharHealth = dice(3)>>
+<<set $rightCharHealth = dice(3)>>
+//1 ==> High
+//2 ==> Medium
+//3 ==> Low
+
+<<set $weaponRoll = dice($junkWeapon)>>
+//1 ==> Axe
+//2 ==> Bow
+//3 ==> Staff
+//Last (4) ==> Junk
+
+<<jump Control1>>
+===
+title:Control1
+---
+<<if $leftChar == "Lana">>
+    <<jump LanaElenore1>>
+<<elseif $leftChar == "Aspen">>
+    <<jump AspenKagiso1>>
+<<elseif $leftChar == "Eden">>
+    <<jump EdenAmsel1>>
+<<endif>>
+===
+title:Control2
+---
+<<if $rightChar == "Lana">>
+    <<jump LanaElenore2>>
+<<elseif $rightChar == "Aspen">>
+    <<jump AspenKagiso2>>
+<<elseif $rightChar == "Eden">>
+    <<jump EdenAmsel2>>
+<<endif>>
+===
+title:Control3
+---
+<<if $leftChar == "Lana">>
+    <<jump LanaElenore3>>
+<<elseif $leftChar == "Aspen">>
+    <<jump AspenKagiso3>>
+<<elseif $leftChar == "Eden">>
+    <<jump EdenAmsel3>>
+<<endif>>
+===
+title:Control4
+---
+That's the end of the conversation.  I hope you enjoyed it!
+Feel free to reload the same script for a new random scene!
+===
+
+title:LanaElenore1
+---
+<<if $convoRoll == 1>>
+    Lana: You've been fighting pretty hard.  Are you feeling okay?
+<<elseif $convoRoll == 2>>
+    Lana: Whoa, new items.  I wonder what we got!
+<<elseif $convoRoll == 3>>
+    Lana: It's good to see a friendly face down here.  It's nice to meet you!
+<<endif>>
+<<jump Control2>>
+===
+title:LanaElenore2
+---
+<<if $convoRoll == 1>>
+    <<if $leftCharHealth == 1>>
+        Lana: I'm doing just fine.  This is nothing, don't worry!
+    <<elseif $leftCharHealth == 2>>
+        Lana: Just a few scratches, nothing a potion can't heal.
+    <<elseif $leftCharHealth == 3>>
+        Lana: I might need to catch my breath...
+    <<endif>>
+<<elseif $convoRoll == 2>>
+    <<if $weaponRoll == $leftWeapon>>
+        <<if $weaponRoll == $rightWeapon>>
+            Lana: Oh, you're an axe-wielder, too, aren't you?  Should we arm-wrestle to see who gets it?
+        <<else>>
+            Lana: An axe!  This looks pretty strong, too.  I wonder if it will help me fight better here.
+        <<endif>>
+    <<else>>
+        <<if $weaponRoll == $rightWeapon>>
+            Lana: This looks like something you could use.  Want to give it a try?
+        <<else>>
+            <<if $weaponRoll == $junkWeapon>>
+                Lana: What... is this supposed to be?
+            <<else>>
+                Lana: I don't think either of us can use this.  Maybe someone else will have better luck?
+            <<endif>>
+        <<endif>>
+    <<endif>>
+<<elseif $convoRoll == 3>>
+    Lana: I'm Lana.  It's good to make some new friends.  Let's do our best together!
+<<endif>>
+<<jump Control3>>
+===
+title:LanaElenore3
+---
+<<if $convoRoll == 1>>
+    <<if $leftCharHealth == 1>>
+        <<if $rightCharHealth == 1>>
+            Lana: Yeah, this is easy, isn't it?  Let's keep going.
+        <<elseif $rightCharHealth == 2>>
+            Lana: I'll catch up to you.  I won't let you leave me in the dust!
+        <<elseif $rightCharHealth == 3>>
+            Lana: Glad one of us is doing alright.  I think I'll need a healer after that last round.
+        <<endif>>
+    <<elseif $leftCharHealth == 2>>
+        <<if $rightCharHealth == 1>>
+            Lana: Don't give up now, we'll get 'em on the next run.
+        <<elseif $rightCharHealth == 2>>
+            Lana: Maybe we should watch each other's backs a bit more next round.
+        <<elseif $rightCharHealth == 3>>
+            Lana: The monsters down here are rough.  Maybe we should think this through a bit better.
+        <<endif>>
+    <<elseif $leftCharHealth == 3>>
+        <<if $rightCharHealth == 1>>
+            Lana: There's no shame in bowing out.  Better to take a break while you can.  That way you'll come back stronger tomorrow!
+        <<elseif $rightCharHealth == 2>>
+            Lana: The monsters down here are rough.  Maybe we should think this through a bit better.
+        <<elseif $rightCharHealth == 3>>
+            Lana: I think... we're going to have to come up with a new plan.
+        <<endif>>
+    <<endif>>
+<<elseif $convoRoll == 2>>
+    <<if $weaponRoll == $leftWeapon>>
+        <<if $weaponRoll == $rightWeapon>>
+            Lana: A contest?  You're on!
+        <<else>>
+            Lana: Looking good, I can't wait to see what you'll do with it.
+        <<endif>>
+    <<else>>
+        <<if $weaponRoll == $rightWeapon>>
+            Lana: I wonder how this axe compares to the one I've already got.  Thank you!
+        <<else>>
+            <<if $weaponRoll == $junkWeapon>>
+                Lana: I just hope the next merchant we find can take it off our hands...
+            <<else>>
+                Lana: I wonder if anyone else in our party can use it.
+            <<endif>>
+        <<endif>>
+    <<endif>>
+<<elseif $convoRoll == 3>>
+    Lana: Well then, {$rightChar}, let's give it our all.
+<<endif>>
+<<jump Control4>>
+===
+
+
+
+title:AspenKagiso1
+---
+<<if $convoRoll == 1>>
+    Aspen: This is nothing like the forests back home.  Take care of yourself, yeah?
+<<elseif $convoRoll == 2>>
+    Aspen: Hey, hey, we got something!  Open it, open it!
+<<elseif $convoRoll == 3>>
+    Aspen: Hey there, stranger, welcome to the party.  It's always fun seeing new faces!
+<<endif>>
+<<jump Control2>>
+===
+title:AspenKagiso2
+---
+<<if $convoRoll == 1>>
+    <<if $leftCharHealth == 1>>
+        Aspen: The monsters back home are stronger than this.  This is nothing!
+    <<elseif $leftCharHealth == 2>>
+        Aspen: I gotta be more careful, that last attack almost got me.
+    <<elseif $leftCharHealth == 3>>
+        Aspen: I screwed up... I need a healer...
+    <<endif>>
+<<elseif $convoRoll == 2>>
+    <<if $weaponRoll == $leftWeapon>>
+        <<if $weaponRoll == $rightWeapon>>
+            Aspen: A bow, huh?  How about a game of tag to decide who gets dibs?
+        <<else>>
+            Aspen: This bow looks really strong!  I bet I can beat another hundred monsters with this thing.
+        <<endif>>
+    <<else>>
+        <<if $weaponRoll == $rightWeapon>>
+            Aspen: I think this'll suit you better than me.  Why not give it a try?
+        <<else>>
+            <<if $weaponRoll == $junkWeapon>>
+                Aspen: Treasure, huh?  I guess that's cool.  I was hoping for a new weapon, though.
+            <<else>>
+                Aspen: It looks strong, but I've never really used one of these before.
+            <<endif>>
+        <<endif>>
+    <<endif>>
+<<elseif $convoRoll == 3>>
+    Aspen: The name's Aspen!  I'll run circles around these guys, just you wait and see!
+<<endif>>
+<<jump Control3>>
+===
+title:AspenKagiso3
+---
+<<if $convoRoll == 1>>
+    <<if $leftCharHealth == 1>>
+        <<if $rightCharHealth == 1>>
+            Aspen: Totally.  On to the next room!
+        <<elseif $rightCharHealth == 2>>
+            Aspen:I really need to step up my game.  I'm not done yet!
+        <<elseif $rightCharHealth == 3>>
+            Aspen: Think you can cover for me, then?  I'm not doing so hot myself.
+        <<endif>>
+    <<elseif $leftCharHealth == 2>>
+        <<if $rightCharHealth == 1>>
+            Aspen: No time for a catnap, friend, we've got monsters to fight!
+        <<elseif $rightCharHealth == 2>>
+            Aspen:Things are only gonna get tougher from here.
+        <<elseif $rightCharHealth == 3>>
+            Aspen: It's getting dangerous.  We need to be more careful.
+        <<endif>>
+    <<elseif $leftCharHealth == 3>>
+        <<if $rightCharHealth == 1>>
+            Aspen: Why don't you take a breather?  You really don't look so good.
+        <<elseif $rightCharHealth == 2>>
+            Aspen: It's getting dangerous.  We need to be more careful.
+        <<elseif $rightCharHealth == 3>>
+            Aspen: This... isn't working.
+        <<endif>>
+    <<endif>>
+<<elseif $convoRoll == 2>>
+    <<if $weaponRoll == $leftWeapon>>
+        <<if $weaponRoll == $rightWeapon>>
+            Aspen: No way I'm gonna lose to you!
+        <<else>>
+            Aspen: It looks great on you, but I'll still get more kills than you!
+        <<endif>>
+    <<else>>
+        <<if $weaponRoll == $rightWeapon>>
+            Aspen: Thanks for the bow, friend!  I'll put it to good use.
+        <<else>>
+            <<if $weaponRoll == $junkWeapon>>
+                Aspen: At least we'll get some funds outta selling this, right?
+            <<else>>
+                Aspen: It's kinda sad to see it go to waste.  Maybe we can ask the rest of our party.
+            <<endif>>
+        <<endif>>
+    <<endif>>
+<<elseif $convoRoll == 3>>
+    Aspen: Good to meet ya, {$rightChar}.  I can't wait to see you in action!
+<<endif>>
+<<jump Control4>>
+===
+
+
+
+title:EdenAmsel1
+---
+<<if $convoRoll == 1>>
+    Eden: It's pretty dangerous in this dungeon.  How are you feeling?
+<<elseif $convoRoll == 2>>
+    Eden: Ooh, an item.  I wonder what we got.
+<<elseif $convoRoll == 3>>
+    Eden: N-Nice to meet you!  I'm E-Eden, what's your name?
+<<endif>>
+<<jump Control2>>
+===
+title:EdenAmsel2
+---
+<<if $convoRoll == 1>>
+    <<if $leftCharHealth == 1>>
+        Eden: Oh, I feel fine, thank you.  Even I can handle things like this.
+    <<elseif $leftCharHealth == 2>>
+        Eden: I've been better, but as a healer, it's my job to put in hard work.  I won't let this keep me down.
+    <<elseif $leftCharHealth == 3>>
+        Eden: I hope my magic will be enough to heal this...
+    <<endif>>
+<<elseif $convoRoll == 2>>
+    <<if $weaponRoll == $leftWeapon>>
+        <<if $weaponRoll == $rightWeapon>>
+            Eden: We both use bows, don't we?  Let's play a guessing game to see who gets to use it, then.  Are you ready?
+        <<else>>
+            Eden: Oh wow, the craftsmanship on this bow is amazing!  I can already feel myself getting psyched to use it!
+        <<endif>>
+    <<else>>
+        <<if $weaponRoll == $rightWeapon>>
+            Eden: I can't use this, but I think you'll be stronger than ever with it.  Want to give it a try?
+        <<else>>
+            <<if $weaponRoll == $junkWeapon>>
+                Eden: This artifact is very old, but doesn't seem to have any practical value for us.
+            <<else>>
+                Eden: It's beautiful, but I don't think we can use it.  What a shame.
+            <<endif>>
+        <<endif>>
+    <<endif>>
+<<elseif $convoRoll == 3>>
+    Eden: N-N-Nice to meet you, I-I'm Eden.  I'll b-be your healer, so p-please, rely on me!
+<<endif>>
+<<jump Control3>>
+===
+title:EdenAmsel3
+---
+<<if $convoRoll == 1>>
+    <<if $leftCharHealth == 1>>
+        <<if $rightCharHealth == 1>>
+            Eden: Glad you're in top form.  Make sure to stay that way, okay?
+        <<elseif $rightCharHealth == 2>>
+            Eden: It's tougher than I expected down here, but I won't let you down!
+        <<elseif $rightCharHealth == 3>>
+            Eden: I'm glad you're okay, but I think I need a time-out.
+        <<endif>>
+    <<elseif $leftCharHealth == 2>>
+        <<if $rightCharHealth == 1>>
+            Eden: I'll patch you up, don't worry.  We should be able to handle this!
+        <<elseif $rightCharHealth == 2>>
+            Eden: I'm having some trouble, too.  I'll need to use some group healing spells before things get worse.
+        <<elseif $rightCharHealth == 3>>
+            Eden: They're so strong down here.  I don't know if my healing can keep up...
+        <<endif>>
+    <<elseif $leftCharHealth == 3>>
+        <<if $rightCharHealth == 1>>
+            Eden: My healing can only help you if you're still with us, you know.  If you need to take a step back, we'll cover for you.
+        <<elseif $rightCharHealth == 2>>
+            Eden: They're so strong down here.  I don't know if my healing can keep up...
+        <<elseif $rightCharHealth == 3>>
+            Eden: Maybe we weren't ready for this.
+        <<endif>>
+    <<endif>>
+<<elseif $convoRoll == 2>>
+    <<if $weaponRoll == $leftWeapon>>
+        <<if $weaponRoll == $rightWeapon>>
+            Eden: O-Oh, a challenge?  I'll do my best!
+        <<else>>
+            Eden: It's like a work of art on you!
+        <<endif>>
+    <<else>>
+        <<if $weaponRoll == $rightWeapon>>
+            Eden: Thank you for thinking of me.  I'll put this bow to good use on the back lines.
+        <<else>>
+            <<if $weaponRoll == $junkWeapon>>
+                Eden: We came all this way to find it, it seems such a shame to let it go to waste.  Maybe a traveling merchant will take it off our hands for it!
+            <<else>>
+                Eden: Even if we can't use it, it's still a nice weapon.  Maybe we can give it to a museum for display?
+            <<endif>>
+        <<endif>>
+    <<endif>>
+<<elseif $convoRoll == 3>>
+    Eden: I-It's a pleasure, {$rightChar}.  I look forward to working with you!
+<<endif>>
+<<jump Control4>>
+===
+
+
+
+
+
+
+
+title:NewChar1
+---
+<<if $convoRoll == 1>>
+    
+<<elseif $convoRoll == 2>>
+    
+<<elseif $convoRoll == 3>>
+    
+<<endif>>
+<<jump Control2>>
+===
+title:NewChar2
+---
+<<if $convoRoll == 1>>
+    <<if $leftCharHealth == 1>>
+        
+    <<elseif $leftCharHealth == 2>>
+        
+    <<elseif $leftCharHealth == 3>>
+        
+    <<endif>>
+<<elseif $convoRoll == 2>>
+    <<if $weaponRoll == $leftWeapon>>
+        <<if $weaponRoll == $rightWeapon>>
+            
+        <<else>>
+            
+        <<endif>>
+    <<else>>
+        <<if $weaponRoll == $rightWeapon>>
+            
+        <<else>>
+            <<if $weaponRoll == $junkWeapon>>
+                
+            <<else>>
+                
+            <<endif>>
+        <<endif>>
+    <<endif>>
+<<elseif $convoRoll == 3>>
+    
+<<endif>>
+<<jump Control3>>
+===
+title:NewChar3
+---
+<<if $convoRoll == 1>>
+    <<if $leftCharHealth == 1>>
+        <<if $rightCharHealth == 1>>
+            
+        <<elseif $rightCharHealth == 2>>
+        
+        <<elseif $rightCharHealth == 3>>
+        
+        <<endif>>
+    <<elseif $leftCharHealth == 2>>
+        <<if $rightCharHealth == 1>>
+        
+        <<elseif $rightCharHealth == 2>>
+        
+        <<elseif $rightCharHealth == 3>>
+        
+        <<endif>>
+    <<elseif $leftCharHealth == 3>>
+        <<if $rightCharHealth == 1>>
+        
+        <<elseif $rightCharHealth == 2>>
+        
+        <<elseif $rightCharHealth == 3>>
+        
+        <<endif>>
+    <<endif>>
+<<elseif $convoRoll == 2>>
+    <<if $weaponRoll == $leftWeapon>>
+        <<if $weaponRoll == $rightWeapon>>
+        
+        <<else>>
+        
+        <<endif>>
+    <<else>>
+        <<if $weaponRoll == $rightWeapon>>
+        
+        <<else>>
+            <<if $weaponRoll == $junkWeapon>>
+            
+            <<else>>
+            
+            <<endif>>
+        <<endif>>
+    <<endif>>
+<<elseif $convoRoll == 3>>
+
+<<endif>>
+<<jump Control4>>
+===
