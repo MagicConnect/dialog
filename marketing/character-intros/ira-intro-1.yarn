@@ -1,0 +1,39 @@
+title:Start
+---
+<<char_clear_all>>
+<<vfx_fg_blackout>>
+<<bg_load "CityStreetsNight">>
+<<char_add "Nalia" "NaliaBelmont" Left visible>>
+<<char_add "Ira" "IraLennox" Right>>
+<<vfx_fg_fadein 1.0>>
+
+(RUSTLE RUSTLE)
+Nalia: Eeep! W-who's there? Show yourself!
+???: Just an acquaintance...
+<<char_show Ira 1.5 true>>
+Ira: You're looking well, Nalia.
+Nalia: Scared me half to death!
+Nalia: What do you want?
+Ira: C'mon now, don't be that way. I'm just looking for my next big score.
+Nalia: Like always...
+Ira: No rest for the wicked.
+Ira: I'm just wondering if you've heard any chatter about that expedition.
+Nalia: I haven't.
+Ira: Not even a peep? You talk to everyone. Surely someone's said something.
+Ira: If they brought back treasure, you'd be entitled to a finder's fee.
+Ira: On my honor.
+Nalia: Honor. Hah! What honor?
+Ira: I may be a thief, but I'm always good to my friends.
+Ira: And I'd like to think we're friends. Aren't we?
+Nalia: ...
+Nalia: A priest mentioned that they only brought back manuscripts. Nothing that would interest you.
+Ira: Hmmph...
+Ira: See? Was that so hard?
+Ira: It's always a pleasure, Nalia.
+Nalia: ... The feeling's mutual.
+<<char_hide Ira 1.0 true>>
+Nalia: Thief...
+<<vfx_fg_blackout 1.0 true>>
+<<char_clear_all>>
+
+===

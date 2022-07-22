@@ -1,15 +1,16 @@
 title:Start
 ---
 <<char_clear_all>>
-<<bg_load "background" visible>>
-<<char_add "alias" "character" position visible>>
+<<vfx_fg_blackout>>
+<<bg_load "Background">>
+<<char_add "Holy Sage" "HolySage" Left visible>>
+<<char_add "Zoe" "Zoe" Right visible>>
+<<vfx_fg_fadein 1.0>>
 
 TEXT
 
-<<char_hide "alias" 1.0>>
-<<char_clear_all>>
-<<wait 0.5>>
-<<bg_blackout 1.0>>
 
+<<vfx_fg_blackout 1.0 true>>
+<<char_clear_all>>
 
 ===

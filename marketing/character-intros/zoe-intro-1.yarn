@@ -1,9 +1,11 @@
 title:Start
 ---
 <<char_clear_all>>
+<<vfx_fg_blackout>>
 <<bg_load "TempleBase">>
 <<char_add "Holy Sage" "HolySage" Left visible>>
 <<char_add "Zoe" "Zoe" Right>>
+<<vfx_fg_fadein 1.0>>
 ???: Holy Sage?
 Holy Sage: Come in.
 <<char_show "Zoe" 0.5 >>
@@ -24,8 +26,8 @@ Zoe: I don't know if I agree, Holy Sage.
 Holy Sage: I understand. 
 Holy Sage: Well, we should go greet Lesile and Therys. Are you ready to witness history, Zoe?
 Zoe: Always.
-<<char_hide "Zoe" 0.5>>
-<<char_hide "Holy Sage" 0.5>>
-<<bg_blackout 1.0>>
+<<char_hide "Zoe" 0.5 false>>
+<<char_hide "Holy Sage" 0.5 false>>
+<<vfx_fg_blackout 1.0 true>>
 <<char_clear_all>>
 ===

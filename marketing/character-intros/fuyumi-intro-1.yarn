@@ -1,8 +1,10 @@
 title:Start
 ---
+<<vfx_fg_blackout>>
 <<bg_load "RoyalPalaceGrandChamberInteriorNight">>
 <<char_add "Marianne" "MarianneMorenoAlaister" Left visible>>
 <<char_add "Fuyumi" "FuyumiHana" Right>>
+<<vfx_fg_fadein 1.0>>
 Marianne: Thank you for the escort on such short notice.
 <<char_show "Fuyumi" 0.5>>
 Fuyumi: I must admit, your training is unorthodox. Is heading all the way into the mountains strictly necessary?
@@ -21,10 +23,9 @@ Marianne: Well, thanks again for the help, Fuyumi.
 Fuyumi: Of course. Goodnight.
 <<char_hide "Marianne" 0.5>>
 Fuyumi: *sigh*
-Fuyumi: You're Fuyumi Hana. You've done so much good.
+Fuyumi: Fuyumi Hana, you've done so much good.
 Fuyumi: When does all the good start to make the bad fade away?
-<<char_hide "Fuyumi" 0.5>>
-<<wait 0.5>>
-<<bg_blackout 1.0>>
+<<char_hide "Fuyumi" 1.0 true>>
+<<vfx_fg_blackout 1.0 true>>
 <<char_clear_all>>
 ===
