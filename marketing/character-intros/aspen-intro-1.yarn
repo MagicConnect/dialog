@@ -1,0 +1,30 @@
+title:Start
+---
+<<vfx_fg_blackout>>
+<<bg_load "Barracks">>
+<<char_add "Aspen" "AspenKagiso" Right visible>>
+<<char_add "Jasmine" "Jasmine" Left>>
+Aspen: Hyah! Take that!
+<<vfx_fg_fadein 1.0>>
+<<wait_anim>>
+Aspen: Perfect, another bullseye.
+Aspen: Huff... Huff... The training regimen here is much tougher than it was back home in the Entwood Forest.
+Aspen: But if this is what it takes to get stronger, then I'll do my best.
+<<char_show Jasmine 1.0 true>>
+Jasmine: Working hard again?
+Aspen: Captain! Aspen Kagiso, at your service!
+Jasmine: Relax, you're still just a visitor, not one of my guardsmen.
+Aspen: Aww...
+Jasmine: Still, you've got quite a lot of skill for someone not from the capital. You've got a lot of promise.
+Aspen: Really? You think so? I've been practicing every day.
+Aspen: Catching birds, catching fish, catching rabbits...
+Jasmine: Sounds like you know what you want, Aspen.
+Aspen: Well, I've gotta get stronger if I'm gonna protect my village. My little siblings are counting on me.
+Jasmine: In that case, you should look into the Citizen Tournament next month. I hear plenty of strong fighters will be participating.
+Aspen: Really?!
+Jasmine: You'll get to test your strength in battle and show everyone just how strong fighters from the Entwood Forest truly are.
+Aspen: Awesome, I can't wait!
+Aspen: Look out, Sutheria, here comes Aspen!
+<<vfx_fg_blackout 1.0 true>>
+<<char_clear_all>>
+===
