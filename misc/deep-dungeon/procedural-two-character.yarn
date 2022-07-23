@@ -6,21 +6,21 @@ title:Start
 <<declare $leftWeapon = 0 as number>>
 <<declare $rightWeapon = 0 as number>>
 <<declare $junkWeapon = 8 as number>>
-
-//<<declare $leftCharRoll = 0 as number>>
-//<<declare $rightCharRoll = 0 as number>>
-//<<declare $convoRoll = 0 as number>>
-//<<declare $leftCharHealth = 0 as number>>
-//<<declare $rightCharHealth = 0 as number>>
-//<<declare $weaponRoll = 0 as number>>
+<<declare $charCount = 7 as number>> //Update this as more characters are added to this file!
+<<declare $leftCharRoll = 0 as number>>
+<<declare $rightCharRoll = 0 as number>>
+<<declare $convoRoll = 0 as number>>
+<<declare $leftCharHealth = 0 as number>>
+<<declare $rightCharHealth = 0 as number>>
+<<declare $weaponRoll = 0 as number>>
 <<bg_load "Barracks">>
 <<vfx_fg_fadein>>
 
 Let's have a sample scene with two random characters.
 First, we'll pick the left character.
 
-//Number of characters.  Right now, dialogue exists only for 4.  There are 13 characters for deep dungeon so far.
-<<set $leftCharRoll = dice(5)>>
+//Number of characters.  Right now, dialogue exists only for 7.  There are 13 characters for deep dungeon so far.  Defined above in the declaration block.
+<<set $leftCharRoll = number(dice($charCount))>>
 
 //New characters are added both to THIS list AND the next one!  Don't forget!
 <<if $leftCharRoll == 1>>
@@ -80,7 +80,7 @@ First, we'll pick the left character.
 You rolled {$leftChar}.
 
 Now for the person on the right.
-<<set $rightCharRoll = dice(5)>>
+<<set $rightCharRoll = number(dice($charCount))>>
 
 <<if $rightCharRoll == 1>>
     <<set $rightChar = "Lana">>
@@ -142,18 +142,18 @@ Let's not keep you waiting any longer, shall we?
 It's time for... the conversation!
 But first we need to generate some internal variables...
 
-<<set $convoRoll = dice(3)>>
+<<set $convoRoll = number(dice(3))>>
 //1 ==> Health
 //2 ==> Item
 //3 ==> Introduction
 
-<<set $leftCharHealth = dice(3)>>
-<<set $rightCharHealth = dice(3)>>
+<<set $leftCharHealth = number(dice(3))>>
+<<set $rightCharHealth = number(dice(3))>>
 //1 ==> High
 //2 ==> Medium
 //3 ==> Low
 
-<<set $weaponRoll = dice($junkWeapon)>>
+<<set $weaponRoll = number(dice($junkWeapon))>>
 //1 ==> Axe
 //2 ==> Bow
 //3 ==> Staff
@@ -178,6 +178,10 @@ title:Control1
     <<jump Zoe1>>
 <<elseif $leftChar == "Fuyumi">>
     <<jump Fuyumi1>>
+<<elseif $leftChar == "Marianne">>
+    <<jump Marianne1>>
+<<elseif $leftChar == "Nalia">>
+    <<jump Nalia1>>
 <<endif>>
 ===
 title:Control2
@@ -194,6 +198,10 @@ title:Control2
     <<jump Zoe2>>
 <<elseif $rightChar == "Fuyumi">>
     <<jump Fuyumi2>>
+<<elseif $rightChar == "Marianne">>
+    <<jump Marianne2>>
+<<elseif $rightChar == "Nalia">>
+    <<jump Nalia2>>
 <<endif>>
 ===
 title:Control3
@@ -210,6 +218,10 @@ title:Control3
     <<jump Zoe3>>
 <<elseif $leftChar == "Fuyumi">>
     <<jump Fuyumi3>>
+<<elseif $leftChar == "Marianne">>
+    <<jump Marianne3>>
+<<elseif $leftChar == "Nalia">>
+    <<jump Nalia3>>
 <<endif>>
 ===
 title:Control4
@@ -709,11 +721,11 @@ title:Fuyumi3
 title:Marianne1
 ---
 <<if $convoRoll == 1>>
-    
+    Marianne: The dungeon gets more dangerous.  You're not going to get swallowed up, are you?
 <<elseif $convoRoll == 2>>
-    
+    Marianne: Hmm.  Loot.  I wonder what's inside.
 <<elseif $convoRoll == 3>>
-    
+    Marianne: Hello there.
 <<endif>>
 <<jump Control2>>
 ===
@@ -721,27 +733,126 @@ title:Marianne2
 ---
 <<if $convoRoll == 1>>
     <<if $leftCharHealth == 1>>
-        
+        Marianne: We're fine, don't worry about us.  This is nothing.
     <<elseif $leftCharHealth == 2>>
-        
+        Marianne: Nothing some first-aid won't fix.  I've got a kit over here.
     <<elseif $leftCharHealth == 3>>
-        
+        Marianne: I'm hurt...  This might call for some more advanced magical healing.
     <<endif>>
 <<elseif $convoRoll == 2>>
     <<if $weaponRoll == $rightWeapon>>
         <<if $weaponRoll == $leftWeapon>>
-            
+            Marianne: A dagger set, and we both use them.  I challenge you to a throwing contest, best out of three.
         <<else>>
-            
+            Marianne: These daggers' weight and balance are good.  I'll make quick work of our enemies with these.
         <<endif>>
     <<else>>
         <<if $weaponRoll == $leftWeapon>>
-            
+            Marianne: Looks like something you can use.  Here, take it.
         <<else>>
             <<if $weaponRoll == $junkWeapon>>
-                
+                Marianne: Garbage.  I don't want this.
             <<else>>
-                
+                Marianne: Looks strong, but neither of us know how to use this.
+            <<endif>>
+        <<endif>>
+    <<endif>>
+<<elseif $convoRoll == 3>>
+    Marianne: I'm Marianne, and this is my dog, Alaister.  I'll watch your back, yeah?
+<<endif>>
+Alaister: Woof woof!
+<<jump Control3>>
+===
+title:Marianne3
+---
+<<if $convoRoll == 1>>
+    <<if $leftCharHealth == 1>>
+        <<if $rightCharHealth == 1>>
+            Marianne: Good.  Stay that way, and I won't have to stitch you back together.
+        <<elseif $rightCharHealth == 2>>
+            Marianne: I'll keep us nice and healthy, so you just worry about staying in good form.
+        <<elseif $rightCharHealth == 3>>
+            Marianne: That attack blindsided me.  Still, I should be able to take care of this.
+        <<endif>>
+    <<elseif $leftCharHealth == 2>>
+        <<if $rightCharHealth == 1>>
+            Marianne: Take better care of yourself or you'll be in real trouble.
+        <<elseif $rightCharHealth == 2>>
+            Marianne: I'm no stranger to bumps and bruises myself.
+        <<elseif $rightCharHealth == 3>>
+            Marianne: We're taking too much damage.  I'll handle it this time, but I'm worried about next time.
+        <<endif>>
+    <<elseif $leftCharHealth == 3>>
+        <<if $rightCharHealth == 1>>
+            Marianne: You might want to retreat before it gets worse.  I'd rather not have to resurrerct your corpse.
+        <<elseif $rightCharHealth == 2>>
+            Marianne: We're taking too much damage.  I'll handle it this time, but I'm worried about next time.
+        <<elseif $rightCharHealth == 3>>
+            Marianne: That last hit almost got us...  But I'm a healer, I'll take care of it.
+        <<endif>>
+    <<endif>>
+<<elseif $convoRoll == 2>>
+    <<if $weaponRoll == $rightWeapon>>
+        <<if $weaponRoll == $leftWeapon>>
+            Marianne: Hmm, I accept.  I'll even have Alaister sit this out.
+        <<else>>
+            Marianne: Suits you well.  Make sure to cover me so I can focus on healing.
+        <<endif>>
+    <<else>>
+        <<if $weaponRoll == $leftWeapon>>
+            Marianne: Thank you for the daggers.  I'll make sure to properly thank you, as a healer.
+        <<else>>
+            <<if $weaponRoll == $junkWeapon>>
+                Marianne: If Alaister says it's treasure, then it's treasure.  We'll sell it back on the surface.
+            <<else>>
+                Marianne: I'll have Alaister offer it to the others in our party.
+            <<endif>>
+        <<endif>>
+    <<endif>>
+<<elseif $convoRoll == 3>>
+    Marianne: Welcome to the group, {$rightChar}.  I'll watch your back, so you watch mine.
+<<endif>>
+Alaister: Woof, woof!
+<<jump Control4>>
+===
+
+
+title:Nalia1
+---
+<<if $convoRoll == 1>>
+        Nalia: The monsters in this dungeon are something else.  How are you holding up, friend?
+<<elseif $convoRoll == 2>>
+        Nalia: Ooh, I love a good treasure chest.  Open it, open it!  What's inside?
+<<elseif $convoRoll == 3>>
+        Nalia: Oh, a new friend!  New people means new stories!  What's your name?
+<<endif>>
+<<jump Control2>>
+===
+title:Nalia2
+---
+<<if $convoRoll == 1>>
+    <<if $leftCharHealth == 1>>
+        Nalia: I'm just peachy.  Full of excitement.  Can't wait to see what's next!
+    <<elseif $leftCharHealth == 2>>
+        Nalia: Y'know, I've been better.  I'm a bit wiped.
+    <<elseif $leftCharHealth == 3>>
+        Nalia: This is a lot harder than I thought it'd be, and not just because I read all the stories about this place.
+    <<endif>>
+<<elseif $convoRoll == 2>>
+    <<if $weaponRoll == $rightWeapon>>
+        <<if $weaponRoll == $leftWeapon>>
+            Nalia: Hey, we both use bows, don't we?  Why don't we play a game for it?  Ever hit an apple off someone's head before?
+        <<else>>
+            Nalia: Oh, I'll take great care of this.  I wonder what the story behind it is!  Once we get back to the surface, I'll have to do some digging.
+        <<endif>>
+    <<else>>
+        <<if $weaponRoll == $leftWeapon>>
+            Nalia: I bet you'd look amazing holding this.  A new chapter in your adventure lies before you!
+        <<else>>
+            <<if $weaponRoll == $junkWeapon>>
+                Nalia: I don't think we can use this, but I just hate throwing things away, don't you?
+            <<else>>
+                Nalia: Looks like neither of us are good with this kind of weapon.
             <<endif>>
         <<endif>>
     <<endif>>
@@ -750,54 +861,54 @@ title:Marianne2
 <<endif>>
 <<jump Control3>>
 ===
-title:Marianne3
+title:Nalia3
 ---
 <<if $convoRoll == 1>>
     <<if $leftCharHealth == 1>>
         <<if $rightCharHealth == 1>>
-            
+            Nalia: As long as we're both in tip-top shape, nothing can stop us!
         <<elseif $rightCharHealth == 2>>
-        
+            Nalia: Full of vim and vigor, I see.  I could learn from that attitude.
         <<elseif $rightCharHealth == 3>>
-        
+            Nalia: Oof.  Mind sharing some of that enthusiasm with me?
         <<endif>>
     <<elseif $leftCharHealth == 2>>
         <<if $rightCharHealth == 1>>
-        
+            Nalia: Gotta get your head out of the clouds.  We're in this together!
         <<elseif $rightCharHealth == 2>>
-        
+            Nalia: Let's take a quick break and recover our fighting spirit.  Then we'll push on together!
         <<elseif $rightCharHealth == 3>>
-        
+            Nalia: You know, I thought this would be a lot easier in a party.  But here we are, on the ropes.
         <<endif>>
     <<elseif $leftCharHealth == 3>>
         <<if $rightCharHealth == 1>>
-        
+            Nalia: You really ought to get that wound checked out.  If you wanna bow out, now's your chance.
         <<elseif $rightCharHealth == 2>>
-        
+            Nalia: You know, I thought this would be a lot easier in a party.  But here we are, on the ropes.
         <<elseif $rightCharHealth == 3>>
-        
+            Nalia: Oof.  This dungeon doesn't let up.  Let me read some of my notes and come up with a few ideas.
         <<endif>>
     <<endif>>
 <<elseif $convoRoll == 2>>
     <<if $weaponRoll == $rightWeapon>>
         <<if $weaponRoll == $leftWeapon>>
-        
+            Nalia: I love a good challenge.  Let's do this!
         <<else>>
-        
+            Nalia: Aww, thanks, friend.  I'll take good care of this bow.  Just you watch!
         <<endif>>
     <<else>>
         <<if $weaponRoll == $leftWeapon>>
-        
+            Nalia: It looks great on you.  I can't wait to hear the new stories you'll inspire!
         <<else>>
             <<if $weaponRoll == $junkWeapon>>
-            
+                Nalia: Just because everything down here is someone's lost treasure doesn't mean we can afford to take it all with us.  What a shame.
             <<else>>
-            
+                Nalia: I think one of the others will have a much better time with this kind of weapon.  I'll ask around.
             <<endif>>
         <<endif>>
     <<endif>>
 <<elseif $convoRoll == 3>>
-
+    Nalia: Great to meet you, {$rightChar}!  Let's fight alongside each other and make it all the way to the end!
 <<endif>>
 <<jump Control4>>
 ===
